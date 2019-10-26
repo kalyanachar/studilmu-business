@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button ></ion-back-button> -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile View</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <img src="{{userDetails.profile_image}}" class="profile-image" (click)="selectImage()" />
+    <ion-icon name="camera" class="edit-icon"></ion-icon>
+  </div>
+  <div class="ion-text-center profile-view">
+    <ion-item >
+    <ion-label>
+      <ion-icon name="person"></ion-icon>
+     {{userDetails.first_name}} {{userDetails.last_name}}
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label>
+        <ion-icon name="mail"></ion-icon>
+        {{userDetails.email}}
+    </ion-label>
+  </ion-item >
+    <ion-item >
+    <ion-label>
+        <ion-icon name="information-circle"></ion-icon>
+      Department :  {{userDetails.department_name}}
+    </ion-label>
+  </ion-item>
+    <ion-item >
+    <ion-label>
+        <ion-icon name="document"></ion-icon>
+      Position:  {{userDetails.designation_name}}
+    </ion-label>
+  </ion-item>
+    <ion-item >
+    <ion-label>
+        <ion-icon name="hourglass"></ion-icon>
+      Status: Active
+    </ion-label>
+  </ion-item>
+  <ion-button shape="round" padding (click)="gotoPage('profileedit')" class="ion-text-capitalize">Edit Profile</ion-button>
+  </div>
+
+
+
+
+</ion-content>

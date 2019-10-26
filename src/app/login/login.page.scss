@@ -1,0 +1,42 @@
+.login-page {
+    --background: url('/assets/imgs/background.jpg') ;
+    --background-size: cover;
+    --background-position: center;
+    color:#fff;
+
+    .logo-circle {
+        display: block;
+        width: 70px;
+        margin: 25px auto;
+    }
+
+    h2 {
+        font-family: 'Zilla Slab', serif;
+    font-size: 26px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    margin-top: 15px;
+    }
+
+    .item-native {
+        background: transparent;
+    }
+
+    .white-link {
+        color:#fff;
+    }
+    .error-message {
+        color:#fff;
+    }
+
+    form ion-item{
+        --ion-background-color:transparent;
+        color:#fff;
+     }
+     ion-item ion-label {
+         color:#fff;
+         font-size:20px;
+     }
+}

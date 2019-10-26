@@ -1,0 +1,99 @@
+.course-course {
+
+}
+.course-course img {
+    position: relative;
+}
+
+.prograss-maindiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: calc(13% - 0px);
+}
+.text-white {
+    color: #000!important;
+    font-weight: bold;
+}
+.progress-text {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.progress-bar {
+    height: 1rem;
+    line-height: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    transition: width .6s ease;
+}
+
+.assignment ion-card-title {
+    font-size:1rem;
+}
+
+.assign-eye {
+    padding:8px;
+    font-size:30px;
+  }
+/////////////////////////////////////////////////
+  .expand-wrapper {
+    transition: max-height 0.4s ease-in-out;
+    overflow: hidden;
+    height: auto;
+  }
+  
+  .collapsed {
+    max-height: 0 !important;
+  }
+  .ion-text-end {
+      font-size: 20px;
+      font-weight: bold;
+  }
+
+  .lec-title span {
+      float: right;
+  }
+  .course-details div {
+      padding:6px;
+  }
+  .course-details ion-label {
+      margin-left:25px;
+      width:95%;
+      //padding: 10px;
+  }
+  .course-details  ion-checkbox {
+      position: absolute;
+      right:10px;
+  }    
+
+
+  .dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+   // float:right;
+   position: absolute;
+   right:10px;
+  }
+  .dot-black {
+    background-color: #000;
+  }
+  .dot-blue {
+    background-color: #08d6e8;
+  }
+
+//   .course-content0 .dot0 {
+//     background-color: #08d6e8;
+//   }
+
+  .video-checkbox {
+      color:#000 !important;
+  }
+  .lec-info ion-icon {
+    font-size:18px;
+  }
+
+ 

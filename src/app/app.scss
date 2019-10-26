@@ -1,0 +1,42 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+
+//.after-splash{background: url('assets/img/sbackground.jpg');background-size: cover;background-position: center;color:#fff;}
+
+ion-header ion-toolbar {
+    --background: url("/assets/imgs/header.jpg") center / 100%;
+    ion-title {
+        color:#fff;
+    }
+    ion-menu-button {
+        color:#fff;
+    }
+  }
+  ion-content {
+    --background: linear-gradient(to bottom, #ab474b00 0%, #f310194a 100%);
+  }
+ 
+  ion-back-button.sc-ion-back-button-md-h.sc-ion-back-button-md-s.md.button.back-button-has-icon-only.ion-activatable.ion-focusable.show-back-button.hydrated {
+    color:#fff;
+}
+.icon-left {
+    font-size: 25px;
+}
+.icon-right {
+    float:right;
+    font-size:25px;
+}
+
+
+/* css fro video control */
+
+.vjs-progress-control {
+  display:none !important;
+}
+.vjs-progress-holder {
+  display:none !important;
+}

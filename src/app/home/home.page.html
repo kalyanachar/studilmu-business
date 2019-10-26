@@ -1,0 +1,126 @@
+<ion-header>
+    <ion-toolbar>
+       <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+       </ion-buttons>
+       
+       <ion-title>
+          Home
+       </ion-title>
+       <ion-buttons slot="end" class="menu-rightside-icon" (click)="gotoPage('profileview')">
+            <ion-icon name="person" ></ion-icon>
+         </ion-buttons>
+    </ion-toolbar>
+ </ion-header>
+ <ion-content>
+    <h3 text-center>List Of Courses</h3>
+    <ion-card *ngFor="let course of courseList" class="list-course">
+       <!-- <img src="{{imageBaseUrl+course.resizepath}}" *ngIf="today < course.end_date" (click)="gotoCourse(course)"/>
+       <img src="{{imageBaseUrl+course.resizepath}}" *ngIf="today > course.end_date" /> -->
+       <img src="{{course.modoriginalpath}}" *ngIf="today <= course.end_date" (click)="gotoCourse(course)"/>
+       <img src="{{course.modoriginalpath}}" *ngIf="today > course.end_date" />
+
+       <ion-card-content>
+          <ion-card-title>
+           {{course.posttitle}}
+          </ion-card-title>
+          <ion-row class="row" no-padding="">
+             <ion-col class="col">
+                <ion-label>Start Date</ion-label>
+                <p>{{course.start_date | date:'dd MMM yyyy'}}</p>
+             </ion-col>
+             <ion-col class="col" text-right="">
+                <ion-label>End Date</ion-label>
+                <p>{{course.end_date | date:'dd MMM yyyy'}}</p>
+             </ion-col>
+          </ion-row>
+          <ion-row class="row" no-padding="">
+             <ion-col size="10">
+                <ion-button color="success" expand="full" (click)="gotoCourse(course)" *ngIf="course.taken ==0 && today <= course.end_date">Mulai Kursus</ion-button>
+                <ion-button color="danger" expand="full" *ngIf="today > course.end_date">Expired</ion-button>
+             </ion-col>
+             <ion-col size="2">
+                <ion-icon name="eye" class="home-rating" (click)="gotoCourseFeedback(course)"></ion-icon>
+             </ion-col>
+          </ion-row>
+       </ion-card-content>
+    </ion-card>
+    <!-- <ion-card>
+        <img src="assets/imgs/img1.jpg" />
+        <ion-card-content>
+           <ion-card-title>
+              Nine Inch Nails Live
+           </ion-card-title>
+           <ion-row class="row" no-padding="">
+              <ion-col class="col">
+                 <ion-label>Start Date</ion-label>
+                 <p>1 August, 2019</p>
+              </ion-col>
+              <ion-col class="col" text-right="">
+                 <ion-label>End Date</ion-label>
+                 <p>31 August, 2019</p>
+              </ion-col>
+           </ion-row>
+           <ion-row class="row" no-padding="">
+              <ion-col size="10">
+                 <ion-button color="danger" expand="full">Expired</ion-button>
+              </ion-col>
+              <ion-col size="2">
+                 <ion-icon name="eye" class="home-rating" (click)="gotoCourseFeedback()"></ion-icon>
+              </ion-col>
+           </ion-row>
+        </ion-card-content>
+     </ion-card>
+     <ion-card>
+        <img src="assets/imgs/img1.jpg" (click)="gotoCourse()"/>
+        <ion-card-content>
+           <ion-card-title class="course-title">
+              Nine Inch Nails Live
+           </ion-card-title>
+           <ion-row class="row" no-padding="">
+              <ion-col class="col">
+                 <ion-label>Start Date</ion-label>
+                 <p>1 August, 2019</p>
+              </ion-col>
+              <ion-col class="col" text-right="">
+                 <ion-label>End Date</ion-label>
+                 <p>31 August, 2019</p>
+              </ion-col>
+           </ion-row>
+           <ion-row class="row" no-padding="">
+              <ion-col size="10">
+                 <ion-button color="success" expand="full" (click)="gotoCourse()">Mulai Kursus</ion-button>
+              </ion-col>
+              <ion-col size="2">
+                 <ion-icon name="eye" class="home-rating" (click)="gotoCourseFeedback()"></ion-icon>
+              </ion-col>
+           </ion-row>
+        </ion-card-content>
+     </ion-card>
+     <ion-card>
+        <img src="assets/imgs/img1.jpg"/>
+        <ion-card-content>
+           <ion-card-title>
+              Nine Inch Nails Live
+           </ion-card-title>
+           <ion-row class="row" no-padding="">
+              <ion-col class="col">
+                 <ion-label>Start Date</ion-label>
+                 <p>1 August, 2019</p>
+              </ion-col>
+              <ion-col class="col" text-right="">
+                 <ion-label>End Date</ion-label>
+                 <p>31 August, 2019</p>
+              </ion-col>
+           </ion-row>
+           <ion-row class="row" no-padding="">
+              <ion-col size="10">
+                 <ion-button color="danger" expand="full">Expired</ion-button>
+              </ion-col>
+              <ion-col size="2">
+                 <ion-icon name="eye" class="home-rating" (click)="gotoCourseFeedback()"></ion-icon>
+              </ion-col>
+           </ion-row>
+        </ion-card-content>
+     </ion-card> -->
+ </ion-content>

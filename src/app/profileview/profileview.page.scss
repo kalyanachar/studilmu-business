@@ -1,0 +1,23 @@
+
+.profile-image {
+    position: relative;
+    margin: 20px auto;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px grey;
+    display: block;
+}
+.edit-icon {
+position: absolute;
+top: 7%;
+right: 34%;
+font-size: 20px;
+}
+
+.profile-view ion-item {
+    padding:4px 10px 0px 10px;
+}
+.error-message {
+    color:#fff;
+}

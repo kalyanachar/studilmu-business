@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>course</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="course-course" >
+    <div>
+      <!-- <img src="assets/imgs/coursecontent.jpg" /> -->
+      <img src="{{bannerImage}}"  />
+    </div>
+
+    <div class="prograss-maindiv p-absolute w-50 mx-auto">
+      <div class="progress-text text-white">
+        <!-- <div class="row">
+          <div class="col-sm-6 col-md-6">
+                  <a href="/Users/user_profile/10652/590" style="color:#ffffff;">Rate this course</a>
+                  </div>
+            <div class="col-sm-6 col-md-6 text-right">
+              <span ng-bind-html="progressInfo.progressString | translate"><b>10</b> of <b>11</b> items complete</span>
+            </div>
+          </div> -->
+        <ion-grid>
+          <ion-row>
+            <!-- <ion-col>
+                <div>
+                  1 of 3
+                </div>
+              </ion-col> -->
+            <ion-col size="12">
+              <div class="ion-text-end">
+               {{totalViewsCount}} of {{totalLec}} items complete
+              </div>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="progress progress-medium">
+        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+          <!-- <span class="sr-only">100% Complete</span> -->
+        </div>
+        <!-- <div class="custom-bar progress-bar slideInLeft wow animated" style="width: 20%; visibility: visible; animation-name: slideInLeft;"></div> -->
+      </div>
+    </div>
+    <ion-card-header padding>
+      <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="currentSegment">
+        <ion-segment-button value="overview">
+          <ion-label>Overview</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="coursecontent">
+          <ion-label>Course Content</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="assignment">
+          <ion-label>Assignment</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngIf="currentSegment=='overview'">
+        <h3>About this course</h3>
+        <img src="assets/imgs/c1.jpg"/>
+        <ion-item-divider>
+            <ion-label>By The Numbers:</ion-label>
+        </ion-item-divider>
+       
+        <ion-item lines="none">Total Lectures: {{totalLec}}</ion-item>
+        <ion-item lines="none">Languages: Bahasa Indonesia</ion-item>
+
+        <img src="assets/imgs/c2.jpg"/>
+        <ion-item-divider>
+        <ion-label>Features</ion-label>
+      </ion-item-divider>
+        <ion-item lines="none">Lifetime access </ion-item>
+        <ion-item lines="none">Available on iOS and Android</ion-item>
+        <ion-item lines="none">Certificate of Completion</ion-item>
+
+        <p [innerHTML]='lecDesc'></p>
+        <!-- <ion-item-divider>
+            <ion-label>1111111Description23:</ion-label>
+            <p [innerHTML]='lecDesc'></p>
+          
+        </ion-item-divider> -->
+      
+      </div>
+      <div *ngIf="currentSegment=='coursecontent'">
+
+          <!-- <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto">
+              <source [src]="url" type="video/mp4" />
+          </video> -->
+      <!-- <ion-card (click)="expandItem(item)" *ngFor="let item of courseContent">
+        <ion-card-header>
+          <ion-card-title>My Neighbor Totoro</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+          <app-expandable expandHeight="150px" [expanded]="item.expanded">
+            <p>
+              Hello there.
+            </p>
+            <p>
+              Hello there.
+            </p>
+            <p>
+              Hello there.
+            </p>
+            <p>
+              Hello there.
+            </p>
+            <p>
+              Hello there.
+            </p>
+            <p>
+              Hello there.
+            </p>
+          </app-expandable>
+          
+        </ion-card-content>
+      </ion-card> -->
+      <!-- <ion-item padding *ngFor="let d of data" (click)="toggleDetails(d)"><ion-icon color="primary" item-right [name]="d.icon"></ion-icon>
+        {{d.title}}
+        <div *ngIf="d.showDetails">{{d.details}}</div>
+      </ion-item> -->
+      <ion-card padding *ngFor="let course of courseContentNew; let i = index" class="course-content{{i}}">
+        <!-- <ion-icon color="primary" item-right [name]="d.icon"></ion-icon> -->
+      <ion-title class="lec-title" (click)="toggleDetails(course)" *ngIf="course.lectureInfo.length >0"> Section {{i+1}}  <span> {{i+1}}/{{lessonCount}}</span></ion-title>
+        <div *ngIf="course.showDetails" class="course-details">
+          <div *ngFor="let lecture of course.lectureInfo; let i = index" class="lec-info" (click)="gotoPage(lecture)">
+            <ion-icon ios="ios-help-circle" md="md-help-circle" *ngIf="lecture.lectureType=='quiz' || lecture.lectureType=='link'"></ion-icon>
+            <ion-icon name="play-circle" *ngIf="lecture.lectureType=='video'"></ion-icon>
+                 <ion-label text-wrap>{{i+1}}. {{lecture[3]}} </ion-label>
+              
+                <span *ngIf=" lecture.type==2" class="dot dot{{i}} dot-blue"></span>
+
+                <span *ngIf=" lecture.type !=2" class="dot dot{{i}}"   [ngClass]="{
+                  'dot-black': lecture.readLectureInfo==0 || lecture.readLectureInfo=='' ,
+                  'dot-blue': lecture.readLectureInfo ==1
+                }"></span>
+          </div>
+         
+        
+        </div>
+      </ion-card>
+      <!-- <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto">
+          <source [src]="url" type="video/mp4" />
+      </video> -->
+     
+
+    </div>
+      <div *ngIf="currentSegment=='assignment'" class="assignment">
+          <ion-card class="list-course">
+
+              <!-- <img src="assets/imgs/c1.jpg" /> -->
+              <ion-card-content>
+                 <ion-card-title>
+                    Assignment - Handling Customer Objection
+                 </ion-card-title>
+                 <ion-row class="row" no-padding="">
+                    <ion-col class="col">
+                       <ion-label>Lets Create Sales Script</ion-label>
+                       
+                    </ion-col>
+                    </ion-row>
+                    <ion-row class="row" no-padding="">
+                    <ion-col class="col"
+                    >
+                       <ion-label> Workbook Handling Customer Objection.Pdf</ion-label>
+          
+                    </ion-col>
+                 </ion-row>
+                 <ion-row class="row" no-padding="">
+                    <ion-col size="12">
+                       <ion-button color="success" expand="full" >Upload Your Assignment</ion-button>
+                       
+                    </ion-col>
+                    
+                 </ion-row>
+              </ion-card-content>
+           </ion-card>
+
+           
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "studilmu-business",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

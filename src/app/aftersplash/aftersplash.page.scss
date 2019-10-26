@@ -1,0 +1,38 @@
+.after-splash { 
+    --background: url('/assets/imgs/background.jpg') ;
+    --background-size: cover;
+    --background-position: center;
+    color:#fff;
+}
+
+ion-slide {
+    height: 100vh;
+    flex-direction: column;
+}
+
+ion-img {
+    max-width: 50vw;
+    max-height: 50vh;
+    overflow: hidden;
+}
+.after-splash h1{font-size:25px;display: block;text-align: center;font-family: 'Poppins', sans-serif;color:#fff;margin-bottom: 0}
+.after-splash p {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    padding: 0 15px;
+    font-weight: 300;
+    line-height: 20px;
+    padding: 0 25px;
+}
+.skip_button {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
