@@ -4,45 +4,45 @@
   </ion-toolbar>
 </ion-header> -->
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
+    <ion-toolbar class="vb">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
 
-    <ion-title>Video</ion-title>
-  </ion-toolbar>
+        <ion-title>Video</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <ion-card-content>
-      <!-- <video fullscreen="fullscreen" id="videoPlayer"  (ended)="videoEnded()" autoplay="true" class="video-js vjs-default-skin vjs-hidden" data-setup='{}' controls  preload="auto">
+<ion-content class="po">
+    <ion-card>
+        <ion-card-content>
+            <!-- <video fullscreen="fullscreen" id="videoPlayer"  (ended)="videoEnded()" autoplay="true" class="video-js vjs-default-skin vjs-hidden" data-setup='{}' controls  preload="auto">
         <source [src]="videoSource" type="video/mp4" />
     
       </video> -->
 
-      <vg-player >
-          <vg-overlay-play></vg-overlay-play>
-          <vg-buffering></vg-buffering>
-          <vg-controls>
-              <vg-play-pause></vg-play-pause>
-              <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-              <vg-quality-selector *ngIf="bitrates" (onBitrateChange)="setBitrate($event)" [bitrates]="bitrates"></vg-quality-selector>
-              <vg-mute></vg-mute>
-              <vg-volume></vg-volume>
-      
-              <vg-fullscreen></vg-fullscreen>
-          </vg-controls>
-          
-        <video [vgMedia]="media" #media id="singleVideo" (ended)="videoEnded()">
+            <vg-player>
+                <vg-overlay-play></vg-overlay-play>
+                <vg-buffering></vg-buffering>
+                <vg-controls>
+                    <vg-play-pause></vg-play-pause>
+                    <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+                    <vg-quality-selector *ngIf="bitrates" (onBitrateChange)="setBitrate($event)" [bitrates]="bitrates"></vg-quality-selector>
+                    <vg-mute></vg-mute>
+                    <vg-volume></vg-volume>
+
+                    <vg-fullscreen></vg-fullscreen>
+                </vg-controls>
+
+                <video [vgMedia]="media" #media id="singleVideo" (ended)="videoEnded()">
           <source [src]="videoSource" type="video/mp4">
         </video>
-      </vg-player>
-    </ion-card-content>
-  </ion-card>
+            </vg-player>
+        </ion-card-content>
+    </ion-card>
 
-  <!-- https://s3-ap-southeast-1.amazonaws.com/s3-studilmu-ap-southeast-1.amazonaws.com/lecture_video/5d1c3a308bbfc.mp4 -->
-  <!-- <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto">
+    <!-- https://s3-ap-southeast-1.amazonaws.com/s3-studilmu-ap-southeast-1.amazonaws.com/lecture_video/5d1c3a308bbfc.mp4 -->
+    <!-- <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto">
       <source [src]="url" type="video/mp4" />
   </video> -->
 </ion-content>

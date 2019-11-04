@@ -1,6 +1,75 @@
 .quiz-custom {
     text-align: center;
 }
+
 .quiz-count {
     font-size: 18px;
+}
+
+ion-toolbar.vb {
+    --background: #1f5b87 !important;
+    display: inline-block;
+    width: 100%;
+}
+
+ion-toolbar.vb ion-title {
+    font-weight: normal;
+}
+
+.po {
+    --background: #f1f1f1 !important;
+}
+
+.ion_p {
+    float: left;
+    width: 100%;
+    background: #084b7c;
+    text-align: center;
+}
+
+.ion_p ion-card.quiz-custom {
+    background: #ffffff;
+    border-radius: 6px;
+    display: inline-block;
+    position: relative;
+    top: 90px;
+    width: 300px;
+}
+
+.ion_p ion-card.quiz-custom ion-card-title {
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.ion_p ion-card.quiz-custom .quiz-count {
+    color: #666666;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.ion_p ion-card.quiz-custom ion-button {
+    --ion-color-base: transparent !important;
+    --border-radius: 6px !important;
+    text-transform: uppercase;
+    border-radius: 6px;
+    --padding-top: 18px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --padding-bottom: 18px;
+}
+
+.ion_p ion-card.quiz-custom ion-button:focus,
+.ion_p ion-card.quiz-custom ion-button:hover {
+    --ion-color-base: transparent !important;
+}
+
+.ion_p ion-button span {
+    background: #de5b61;
+    padding: 10px 15px;
+    min-width: 214px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 17px;
+    position: absolute;
+    border-radius: 6px;
 }

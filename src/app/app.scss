@@ -4,39 +4,126 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
-
 //.after-splash{background: url('assets/img/sbackground.jpg');background-size: cover;background-position: center;color:#fff;}
-
 ion-header ion-toolbar {
     --background: url("/assets/imgs/header.jpg") center / 100%;
     ion-title {
-        color:#fff;
+        color: #fff;
     }
     ion-menu-button {
-        color:#fff;
+        color: #fff;
     }
-  }
-  ion-content {
-    --background: linear-gradient(to bottom, #ab474b00 0%, #f310194a 100%);
-  }
- 
-  ion-back-button.sc-ion-back-button-md-h.sc-ion-back-button-md-s.md.button.back-button-has-icon-only.ion-activatable.ion-focusable.show-back-button.hydrated {
-    color:#fff;
 }
+
+ion-content {
+    --background: linear-gradient(to bottom, #ab474b00 0%, #f310194a 100%);
+}
+
+ion-back-button.sc-ion-back-button-md-h.sc-ion-back-button-md-s.md.button.back-button-has-icon-only.ion-activatable.ion-focusable.show-back-button.hydrated {
+    color: #fff;
+}
+
 .icon-left {
     font-size: 25px;
 }
+
 .icon-right {
-    float:right;
-    font-size:25px;
+    float: right;
+    font-size: 25px;
 }
 
 
 /* css fro video control */
 
 .vjs-progress-control {
-  display:none !important;
+    display: none !important;
 }
+
 .vjs-progress-holder {
-  display:none !important;
+    display: none !important;
+}
+
+.in_tp {
+    display: inline-block;
+    width: 100%;
+    background: #084b7c;
+    padding: 10px 15px;
+}
+
+.in_tp ion-img {
+    float: left;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.in_tp h6 {
+    float: left;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0;
+    font-size: 100%;
+}
+
+.in_tp .sm-logo {
+    float: right;
+    background: #ffffff;
+    border-radius: 3px;
+}
+
+.in_tp .sm-logo ion-img {
+    margin-right: 0;
+}
+
+ion-toolbar.ct {
+    --background: none !important;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+}
+
+ion-toolbar.ct ion-avatar {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+ion-toolbar.ct h3 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+ion-toolbar.ct p {
+    color: #666666;
+    font-size: 12px;
+}
+
+.ct_co {
+    --background: #ffffff;
+    margin-top: 15px !important;
+}
+
+.ct_co .item-label {
+    --min-height: auto;
+    --padding-start: 15px;
+    --inner-padding-end: 0;
+    --inner-border-width: 0;
+    margin-bottom: 12px;
+    margin-top: 13px;
+    font-size: 14px;
+}
+
+.ct_co .item-label ion-img {
+    width: 20px;
+    opacity: 0.8;
+    margin-right: 10px;
+}
+
+.ct_co .item-label ion-label {
+    padding: 0;
+    margin: 0;
+}
+
+.header-md:after {
+    height: 0;
+    background-image: none;
 }

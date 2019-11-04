@@ -1,7 +1,63 @@
 .course-content ion-col div {
-    font-size:12px;
+    font-size: 12px;
 }
 
 ion-checkbox {
-    --size:12px;
+    --size: 12px;
+}
+
+ion-toolbar.vb {
+    --background: #1f5b87 !important;
+    display: inline-block;
+    width: 100%;
+}
+
+ion-toolbar.vb ion-title {
+    font-weight: normal;
+}
+
+.po {
+    --background: #f1f1f1 !important;
+}
+
+ion-grid.wq {
+    padding: 15px 20px;
+}
+
+.er {
+    background: #eaf6ff;
+    border-radius: 6px;
+    float: left;
+    width: 100%;
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    z-index: 10;
+}
+
+.pi {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.cb {
+    /* float: left; */
+    /* width: 100%; */
+    border-radius: 6px;
+    background: #ffffff;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    position: relative;
+    z-index: 5;
+    padding-top: 15px;
+    text-align: center;
+}
+
+span.kj {
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 11px;
 }

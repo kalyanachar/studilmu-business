@@ -4,34 +4,36 @@
   </ion-toolbar>
 </ion-header> -->
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/"></ion-back-button>
-      </ion-buttons>
-  
-      <ion-title>Quiz</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-toolbar class="vb">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
 
-<ion-content>
-  <ion-card  class="quiz-custom">
-    <ion-card-content>
-       <ion-card-title>
-     Go to Dashboard
-       </ion-card-title>
-       <ion-row class="row" no-padding="">
-          <ion-col class="col">
-             <p class="quiz-count">Total Question : {{quizDetails.questionCount}}</p>
-             <p>{{quizDetails.quizname}}</p>
-          </ion-col>
-       </ion-row>
-       <ion-row class="row" no-padding="">
-          <ion-col size="12">
-             <ion-button color="primary" expand="full" (click)="gotoQuizDetails(lecId)" >Start Quiz</ion-button>
-            
-          </ion-col>
-          
-       </ion-row>
-    </ion-card-content>
- </ion-card>
+        <ion-title>Quiz</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="po">
+    <div class="ion_p">
+        <ion-card class="quiz-custom">
+            <ion-card-content>
+                <ion-card-title>
+                    Go to Dashboard
+                </ion-card-title>
+                <ion-row class="row" no-padding="">
+                    <ion-col class="col">
+                        <p class="quiz-count">Total Question : {{quizDetails.questionCount}}</p>
+                        <p>{{quizDetails.quizname}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="row" no-padding="">
+                    <ion-col size="12">
+                        <ion-button color="primary" expand="full" (click)="gotoQuizDetails(lecId)"><span>Start Quiz</span></ion-button>
+
+                    </ion-col>
+
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </div>
 </ion-content>

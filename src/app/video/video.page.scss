@@ -1,10 +1,26 @@
 video {
-    width:100%;
+    width: 100%;
 }
 
 .vjs-progress-control {
-    display:none !important;
-  }
-  .vjs-progress-holder {
-    display:none !important;
-  }
+    display: none !important;
+}
+
+.vjs-progress-holder {
+    display: none !important;
+}
+
+ion-toolbar.vb {
+    --background: #1f5b87 !important;
+    display: inline-block;
+    width: 100%;
+}
+
+ion-toolbar.vb ion-title {
+    font-weight: normal;
+}
+
+.po {
+    --background: #ffffff !important;
+    --offset-top: 5px !important;
+}
