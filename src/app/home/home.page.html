@@ -1,25 +1,26 @@
 <ion-header>
-    <ion-toolbar>
-       <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-       </ion-buttons>
-       
-       <ion-title>
-          Home
-       </ion-title>
-       <ion-buttons slot="end" class="menu-rightside-icon" (click)="gotoPage('profileview')">
-            <ion-icon name="person" ></ion-icon>
-         </ion-buttons>
-    </ion-toolbar>
- </ion-header>
- <ion-content>
-    <h3 text-center>List Of Courses</h3>
-    <ion-card *ngFor="let course of courseList" class="list-course">
-       <!-- <img src="{{imageBaseUrl+course.resizepath}}" *ngIf="today < course.end_date" (click)="gotoCourse(course)"/>
-       <img src="{{imageBaseUrl+course.resizepath}}" *ngIf="today > course.end_date" /> -->
-       <img src="{{course.modoriginalpath}}" *ngIf="today <= course.end_date" (click)="gotoCourse(course)"/>
-       <img src="{{course.modoriginalpath}}" *ngIf="today > course.end_date" />
+    <ion-toolbar class="vb">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
 
+        <ion-title>
+            Home
+        </ion-title>
+        <ion-buttons slot="end" class="menu-rightside-icon" (click)="gotoPage('profileview')">
+            <ion-icon name="person"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="it_c">
+    <h3 text-center>List Of Courses</h3>
+    <ion-card *ngFor="let course of courseList" class="list-course ic_vb">
+        <!-- <img src="{{imageBaseUrl+course.resizepath}}" *ngIf="today < course.end_date" (click)="gotoCourse(course)"/>
+       <img src="{{imageBaseUrl+course.resizepath}}" *ngIf="today > course.end_date" /> -->
+        <img src="{{course.modoriginalpath}}" *ngIf="today <= course.end_date" (click)="gotoCourse(course)" />
+        <img src="{{course.modoriginalpath}}" *ngIf="today > course.end_date" />
+
+<<<<<<< HEAD
        <ion-card-content>
           <ion-card-title>
            {{course.posttitle}}
@@ -44,6 +45,34 @@
              </ion-col>
           </ion-row>
        </ion-card-content>
+=======
+        <ion-card-content>
+            <ion-card-title>
+                {{course.posttitle}}
+            </ion-card-title>
+            <ion-row class="row" no-padding="">
+                <ion-col class="col">
+                    <ion-label>Start Date</ion-label>
+                    <p>{{course.start_date | date:'dd MMM yyyy'}}</p>
+                </ion-col>
+                <ion-col class="col" text-right="">
+                    <ion-label>End Date</ion-label>
+                    <p>{{course.end_date | date:'dd MMM yyyy'}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row class="row cn" no-padding="">
+                <div class="ain_bl">
+                    <ion-col size="10">
+                        <ion-button color="success" expand="full" (click)="gotoCourse(course)" *ngIf="course.taken ==0 && today <= course.end_date">Mulai Kursus</ion-button>
+                        <ion-button color="danger" expand="full" *ngIf="today > course.end_date">Expired</ion-button>
+                    </ion-col>
+                    <ion-col size="2" class="fg">
+                        <ion-icon name="eye" class="home-rating" (click)="gotoCourseFeedback(course)"></ion-icon>
+                    </ion-col>
+                </div>
+            </ion-row>
+        </ion-card-content>
+>>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
     </ion-card>
     <!-- <ion-card>
         <img src="assets/imgs/img1.jpg" />
@@ -123,4 +152,4 @@
            </ion-row>
         </ion-card-content>
      </ion-card> -->
- </ion-content>
+</ion-content>

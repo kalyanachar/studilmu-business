@@ -1,16 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>coursefeedback</ion-title>
-  </ion-toolbar>
+    <ion-toolbar class="vb">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>coursefeedback</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="po">
 
-  <ion-grid>
-    <ion-row class="course-header">
+    <ion-grid class="wq">
+        <ion-row class="course-header">
+            <div class="er">
+                <ion-col size="4">
+                    <div class="pi">
+                        Activity List
+                    </div>
+                </ion-col>
+                <ion-col size="2">
+                    <div class="pi">
+                        Status
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="pi">
+                        Completion Date
+                    </div>
+                </ion-col>
+            </div>
+        </ion-row>
+        <div class="cb">
+            <ion-row class="course-content">
 
       <ion-col size="4">
         <div>
@@ -97,43 +117,112 @@
                   <div *ngIf="courseContentVideo.status==1">
                       <ion-checkbox disabled="true" checked="true" ></ion-checkbox> Passed <br>
                      
+                <ion-col size="4">
+                    <div>
+                        Enrollment Date of the Course
                     </div>
-                    <div *ngIf="courseContentVideo.status==0">
-                        <ion-checkbox disabled="true" checked="false" *ngIf="courseContentVideo.status==0"></ion-checkbox> Not Yet
-                      </div>
                 </ion-col>
-                
-          </ion-row>
-          
-        </ion-col>
-        <ion-col size="6">
-          <div *ngFor="let courseContentVideo of CourseContentWatchVideo">
-           <span *ngIf="courseContentVideo.status==1"> {{courseContentVideo.title}} , {{courseContentVideo.completionDate | date:'dd MMM yyyy'}}</span>
-           <span *ngIf="courseContentVideo.status==0"> N/A</span>
-          </div>
-        </ion-col>
-      </ion-row>
+                <ion-col size="2">
+                    <div>
+                        <ion-checkbox disabled="true" checked="true"></ion-checkbox> Passed <br>
 
-     <!-- Final Test/Quiz-->
-   
-     <ion-row class="course-content">
-      
-        <ion-col size="4">
-          <div>
-            Final Test
-          </div>
-        </ion-col>
-        <ion-col size="2">
-          <ion-row>
-              <ion-col *ngFor="let courseContentfinaltest of CourseContentFinalTest">
-                  <!-- <div *ngIf="courseContentpretest.status==1">
+                    </div>
+                    <!-- <div *ngIf="courseDetails.status ==0">
+            <ion-checkbox disabled="true" checked="false"></ion-checkbox> Not Yet
+          </div> -->
+                </ion-col>
+                <ion-col size="6">
+                    <div>
+                        {{courseDetails.posttitle}},{{courseDetails.assigndate | date:'dd MMM yyyy'}}
+                    </div>
+                </ion-col>
+            </ion-row>
+            <!-- Pre Test-->
+            <ion-row class="course-content">
+
+                <ion-col size="4">
+                    <div>
+                        Pre Test/Quiz
+                    </div>
+                </ion-col>
+                <ion-col size="2">
+                    <ion-row>
+                        <ion-col *ngFor="let courseContentpretest of CourseContentPreTest">
+                            <div *ngIf="courseContentpretest.status==1">
+                                <ion-checkbox disabled="true" checked="true"></ion-checkbox> <span class="kj">Passed </span><br>
+
+                            </div>
+                            <div *ngIf="courseContentpretest.status==0">
+                                <ion-checkbox disabled="true" checked="false" *ngIf="courseContentpretest.status==0"></ion-checkbox> <span class="kj">Not Yet</span>
+                            </div>
+                        </ion-col>
+
+                    </ion-row>
+
+                </ion-col>
+                <ion-col size="6">
+                    <div *ngFor="let courseContentpretest of CourseContentPreTest">
+                        {{courseContentpretest.percentage}}% , {{courseContentpretest.completionDate | date:'dd MMM yyyy'}}
+                    </div>
+                </ion-col>
+            </ion-row>
+
+            <!-- Watch Video-->
+            <ion-row class="course-content">
+
+                <ion-col size="4">
+                    <div>
+                        Watched Video
+                    </div>
+                </ion-col>
+                <ion-col size="2">
+                    <ion-row>
+                        <ion-col *ngFor="let courseContentVideo of CourseContentWatchVideo">
+                            <div *ngIf="courseContentVideo.status==1">
+                                <ion-checkbox disabled="true" checked="true"></ion-checkbox> <span class="kj"> Passed </span><br>
+
+                            </div>
+                            <div *ngIf="courseContentVideo.status==0">
+                                <ion-checkbox disabled="true" checked="false" *ngIf="courseContentVideo.status==0"></ion-checkbox> <span class="kj">Not Yet</span>
+                            </div>
+                        </ion-col>
+
+                    </ion-row>
+
+                </ion-col>
+                <ion-col size="6">
+                    <div *ngFor="let courseContentVideo of CourseContentWatchVideo">
+                        <span *ngIf="courseContentVideo.status==1"> {{courseContentVideo.title}} , {{courseContentVideo.completionDate | date:'dd MMM yyyy'}}</span>
+                        <span *ngIf="courseContentVideo.status==0"> N/A</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+            <!-- Final Test/Quiz-->
+
+            <ion-row class="course-content">
+
+                <ion-col size="4">
+                    <div>
+                        Final Test
+                    </div>
+                </ion-col>
+                <ion-col size="2">
+                    <ion-row>
+                        <ion-col *ngFor="let courseContentfinaltest of CourseContentFinalTest">
+                            <!-- <div *ngIf="courseContentpretest.status==1">
                       <ion-checkbox disabled="true" checked="true" ></ion-checkbox> Passed <br>
                      
                     </div>
                     <div *ngIf="courseContentpretest.status==0">
                         <ion-checkbox disabled="true" checked="false" *ngIf="courseContentpretest.status==0"></ion-checkbox> Not Yet
                       </div> -->
+                        </ion-col>
+
+                    </ion-row>
+
                 </ion-col>
+<<<<<<< HEAD
                 
           </ion-row>
           
@@ -156,12 +245,33 @@
             <ion-row>
                 <ion-col *ngFor="let courseContentassignment of CourseContentAssignment">
                     <!-- <div *ngIf="courseContentpretest.status==1">
+=======
+                <ion-col size="6">
+                    <div *ngFor="let courseContentfinaltest of CourseContentFinalTest">
+                        <!-- {{courseContentpretest.percentage}}% , {{courseContentpretest.completionDate | date:'dd MMM yyyy'}} -->
+                    </div>
+                </ion-col>
+            </ion-row>
+            <!-- Assignment (if any)-->
+            <ion-row class="course-content">
+
+                <ion-col size="4">
+                    <div>
+                        Assignment (if any)
+                    </div>
+                </ion-col>
+                <ion-col size="2">
+                    <ion-row>
+                        <ion-col *ngFor="let CourseContentassignment of CourseContentAssignment">
+                            <!-- <div *ngIf="courseContentpretest.status==1">
+>>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
                         <ion-checkbox disabled="true" checked="true" ></ion-checkbox> Passed <br>
                        
                       </div>
                       <div *ngIf="courseContentpretest.status==0">
                           <ion-checkbox disabled="true" checked="false" *ngIf="courseContentpretest.status==0"></ion-checkbox> Not Yet
                         </div> -->
+<<<<<<< HEAD
                         <span *ngIf="courseContentassignment.completionDate =='0000-00-0'">N/A</span>  
                   </ion-col>
                   
@@ -175,40 +285,55 @@
                   {{courseContentassignment.completionDate | date:'dd MMM yyyy'}}
               </span>
               <span *ngIf="courseContentassignment.completionDate =='0000-00-0'">
+=======
+                            <span>N/A</span>
+                        </ion-col>
+
+                    </ion-row>
+
+                </ion-col>
+                <ion-col size="6">
+                    <div *ngFor="let CourseContentassignment of CourseContentAssignment">
+                        <span *ngIf="CourseContentassignment.completionDate !=''">
+                  {{courseContentpretest.completionDate | date:'dd MMM yyyy'}}
+              </span>
+                        <span *ngIf="CourseContentassignment.completionDate ==''">
+>>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
                  N/A
               </span>
-              <!-- {{courseContentpretest.percentage}}% , {{courseContentpretest.completionDate | date:'dd MMM yyyy'}} -->
-            </div>
-          </ion-col>
-        </ion-row>
-        <!-- Certificate-->
-        <ion-row class="course-content">
-      
-            <ion-col size="4">
-              <div>
-                Certificate
-              </div>
-            </ion-col>
-            <ion-col size="2">
-              <!-- <ion-row>
+                        <!-- {{courseContentpretest.percentage}}% , {{courseContentpretest.completionDate | date:'dd MMM yyyy'}} -->
+                    </div>
+                </ion-col>
+            </ion-row>
+            <!-- Certificate-->
+            <ion-row class="course-content">
+
+                <ion-col size="4">
+                    <div>
+                        Certificate
+                    </div>
+                </ion-col>
+                <ion-col size="2">
+                    <!-- <ion-row>
                   <ion-col *ngFor="let certificate of CourseContentCertificate">
                           <span>N/A</span>  
                     </ion-col>
                     
               </ion-row> -->
-              <div>
-                  <ion-checkbox disabled="true" ></ion-checkbox> Not Yet <br>
-                 
-                </div>
-              
-            </ion-col>
-            <ion-col size="6">
-              
-                <span>
+                    <div>
+                        <ion-checkbox disabled="true"></ion-checkbox><span class="kj">Not Yet</span> <br>
+
+                    </div>
+
+                </ion-col>
+                <ion-col size="6">
+
+                    <span>
                    N/A
                 </span>
-    
-            </ion-col>
-          </ion-row>
-  </ion-grid>
+
+                </ion-col>
+            </ion-row>
+        </div>
+    </ion-grid>
 </ion-content>

@@ -1,133 +1,134 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-back-button  ></ion-back-button>
-          
-      </ion-buttons>
-    <ion-title>Profile Edit</ion-title>
-  </ion-toolbar>
+    <ion-toolbar class="vb">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+
+        </ion-buttons>
+        <ion-title>Profile Edit</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="po ko">
     <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit(editProfileForm)" padding>
 
         <ion-item>
             <ion-label position="floating" color="primary">Emp Type</ion-label>
             <ion-input type="text" formControlName="emptype" readonly></ion-input>
-          </ion-item>
-         
-          <ion-item>
-              <ion-label position="floating" color="primary">First Name</ion-label>
-              <ion-input type="text" formControlName="fname"></ion-input>
-            </ion-item>
-            <div class="validation-errors">
-              <ng-container *ngFor="let validation of validation_messages.fname">
-                <div class="error-message"
-                  *ngIf="editProfileForm.get('fname').hasError(validation.type) && (editProfileForm.get('fname').dirty || editProfileForm.get('fname').touched)">
-                  <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
-                </div>
-              </ng-container>
-            </div>
-
-            <ion-item>
-                <ion-label position="floating" color="primary">Last Name</ion-label>
-                <ion-input type="text" formControlName="lname"></ion-input>
-              </ion-item>
-              <div class="validation-errors">
-                <ng-container *ngFor="let validation of validation_messages.lname">
-                  <div class="error-message"
-                    *ngIf="editProfileForm.get('lname').hasError(validation.type) && (editProfileForm.get('lname').dirty || editProfileForm.get('lname').touched)">
-                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
-                  </div>
-                </ng-container>
-              </div>
+        </ion-item>
 
         <ion-item>
-          <ion-label position="floating" color="primary">Email</ion-label>
-          <ion-input type="text" formControlName="email" readonly></ion-input>
+            <ion-label position="floating" color="primary">First Name</ion-label>
+            <ion-input type="text" formControlName="fname"></ion-input>
         </ion-item>
         <div class="validation-errors">
-          <ng-container *ngFor="let validation of validation_messages.email">
-            <div class="error-message"
-              *ngIf="editProfileForm.get('email').hasError(validation.type) && (editProfileForm.get('email').dirty || editProfileForm.get('email').touched)">
-              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
-            </div>
-          </ng-container>
+            <ng-container *ngFor="let validation of validation_messages.fname">
+                <div class="error-message" *ngIf="editProfileForm.get('fname').hasError(validation.type) && (editProfileForm.get('fname').dirty || editProfileForm.get('fname').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                </div>
+            </ng-container>
+        </div>
+
+        <ion-item>
+            <ion-label position="floating" color="primary">Last Name</ion-label>
+            <ion-input type="text" formControlName="lname"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.lname">
+                <div class="error-message" *ngIf="editProfileForm.get('lname').hasError(validation.type) && (editProfileForm.get('lname').dirty || editProfileForm.get('lname').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                </div>
+            </ng-container>
+        </div>
+
+        <ion-item>
+            <ion-label position="floating" color="primary">Email</ion-label>
+            <ion-input type="text" formControlName="email" readonly></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.email">
+                <div class="error-message" *ngIf="editProfileForm.get('email').hasError(validation.type) && (editProfileForm.get('email').dirty || editProfileForm.get('email').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                </div>
+            </ng-container>
         </div>
 
         <ion-item>
             <ion-label position="floating" color="primary">Biography</ion-label>
             <ion-textarea type="text" formControlName="biography"></ion-textarea>
-          </ion-item>
-          <div class="validation-errors">
+        </ion-item>
+        <div class="validation-errors">
             <ng-container *ngFor="let validation of validation_messages.biography">
-              <div class="error-message"
-                *ngIf="editProfileForm.get('biography').hasError(validation.type) && (editProfileForm.get('biography').dirty || editProfileForm.get('biography').touched)">
-                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
-              </div>
+                <div class="error-message" *ngIf="editProfileForm.get('biography').hasError(validation.type) && (editProfileForm.get('biography').dirty || editProfileForm.get('biography').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                </div>
             </ng-container>
-          </div>
+        </div>
 
+<<<<<<< HEAD
           <ion-item style="display:none;">
               <ion-label position="floating" color="primary">Language</ion-label>
               <!-- <ion-select formControlName="language_preference" cancelText="Cancel" okText="OK" (change)='onChange($event.target.value)'>
+=======
+        <ion-item>
+            <ion-label position="floating" color="primary">Language</ion-label>
+            <!-- <ion-select formControlName="language_preference" cancelText="Cancel" okText="OK" (change)='onChange($event.target.value)'>
+>>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
                 <ion-select-option  [value]="Es">Bahasa Indonesia</ion-select-option>
                 <ion-select-option  [value]="En">English</ion-select-option>
                 <ion-select-option  [value]="Ot">Others</ion-select-option>
               </ion-select> -->
 
-              <ion-select formControlName="language_preference" cancelText="Cancel" okText="OK">
+            <ion-select formControlName="language_preference" cancelText="Cancel" okText="OK">
                 <ion-select-option *ngFor="let item of languages" [value]="item.value">{{item.name}}</ion-select-option>
-              </ion-select>
-            </ion-item>
+            </ion-select>
+        </ion-item>
 
-            <ion-item>
-                <ion-label position="floating" color="primary">Location</ion-label>
-                <ion-input type="text" formControlName="location"></ion-input>
-              </ion-item>
-              <div class="validation-errors">
-                <ng-container *ngFor="let validation of validation_messages.location">
-                  <div class="error-message"
-                    *ngIf="editProfileForm.get('location').hasError(validation.type) && (editProfileForm.get('location').dirty || editProfileForm.get('location').touched)">
+        <ion-item>
+            <ion-label position="floating" color="primary">Location</ion-label>
+            <ion-input type="text" formControlName="location"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.location">
+                <div class="error-message" *ngIf="editProfileForm.get('location').hasError(validation.type) && (editProfileForm.get('location').dirty || editProfileForm.get('location').touched)">
                     <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
-                  </div>
-                </ng-container>
-              </div>
+                </div>
+            </ng-container>
+        </div>
 
-              <ion-item>
-                  <ion-label position="floating" color="primary">Website Link</ion-label>
-                  <ion-input type="text" formControlName="websitelink"></ion-input>
-               </ion-item>
+        <ion-item>
+            <ion-label position="floating" color="primary">Website Link</ion-label>
+            <ion-input type="text" formControlName="websitelink"></ion-input>
+        </ion-item>
 
-               <ion-item>
-                  <ion-label position="floating" color="primary">Google + Link</ion-label>
-                  <ion-input type="text" formControlName="googlelink"></ion-input>
-               </ion-item>
+        <ion-item>
+            <ion-label position="floating" color="primary">Google + Link</ion-label>
+            <ion-input type="text" formControlName="googlelink"></ion-input>
+        </ion-item>
 
-               <ion-item>
-                <ion-label position="floating" color="primary">Twitter Link</ion-label>
-                <ion-input type="text" formControlName="twitterlink"></ion-input>
-             </ion-item>
+        <ion-item>
+            <ion-label position="floating" color="primary">Twitter Link</ion-label>
+            <ion-input type="text" formControlName="twitterlink"></ion-input>
+        </ion-item>
 
-               <ion-item>
-                  <ion-label position="floating" color="primary">Facebook  Profile</ion-label>
-                  <ion-input type="text" formControlName="facebooklink"></ion-input>
-               </ion-item>
+        <ion-item>
+            <ion-label position="floating" color="primary">Facebook Profile</ion-label>
+            <ion-input type="text" formControlName="facebooklink"></ion-input>
+        </ion-item>
 
-               <ion-item>
-                  <ion-label position="floating" color="primary"> Linkedin  Profile</ion-label>
-                  <ion-input type="text" formControlName="linkedinlink"></ion-input>
-               </ion-item>
-
-                
-               <ion-item>
-                  <ion-label position="floating" color="primary"> Youtube  Profile</ion-label>
-                  <ion-input type="text" formControlName="youtubelink"></ion-input>
-               </ion-item>
+        <ion-item>
+            <ion-label position="floating" color="primary"> Linkedin Profile</ion-label>
+            <ion-input type="text" formControlName="linkedinlink"></ion-input>
+        </ion-item>
 
 
-        <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!editProfileForm.valid">Submit
+        <ion-item>
+            <ion-label position="floating" color="primary"> Youtube Profile</ion-label>
+            <ion-input type="text" formControlName="youtubelink"></ion-input>
+        </ion-item>
+
+
+        <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!editProfileForm.valid"><span>Submit</span>
         </ion-button>
-      </form>
-    
+    </form>
+
 </ion-content>

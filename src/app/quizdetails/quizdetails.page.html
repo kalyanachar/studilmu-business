@@ -4,11 +4,12 @@
   </ion-toolbar>
 </ion-header> -->
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
+    <ion-toolbar class="vb">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
 
+<<<<<<< HEAD
     <ion-title>{{pageTitle}}</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -37,24 +38,57 @@
       <ion-row class="row" no-padding="">
         <ion-col size="12">
           <ion-button color="primary" expand="full" (click)="nextQuestion(quizDetails)">Continue</ion-button>
+=======
+        <ion-title>Quiz Details</ion-title>
+    </ion-toolbar>
+</ion-header>
 
-        </ion-col>
+<ion-content class="po">
+    <div class="ion_p">
+        <ion-card class="quiz-details" *ngIf="showQuestion">
+            <ion-card-content>
+                <ion-card-title>
+                    <h2>Question</h2>
+                </ion-card-title>
+                <ion-row class="row" no-padding="">
+                    <ion-col class="col">
+                        <h2>{{quizDetails.question}}</h2>
+                        <ion-list no-lines radio-group class="mnp">
+                            <ion-radio-group class="rt">
+                                <ion-item *ngFor="let ansOption of ansOptions; let i = index" class="list-course" [ngClass]="{'ans-success':ansStatus==1 && ansindex ==i, 'ans-error': ansStatus==2 && ansindex ==i}">
+                                    <!-- <ion-label>{{i+1}}. {{ansOption.answer}} </ion-label> -->
+                                    <ion-label>{{i+1}}.<span [innerHTML]="ansOption.answer"></span> </ion-label>
+                                    <ion-radio (ionSelect)="selectAnswer(ansOption,quizDetails,i)"></ion-radio>
+                                </ion-item>
+                            </ion-radio-group>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="row" no-padding="">
+                    <ion-col size="12">
+                        <ion-button color="primary" expand="full" (click)="nextQuestion(quizDetails)">Continue</ion-button>
+>>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
 
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-  <!-- -->
-  <ion-card class="quiz-details" *ngIf="!showQuestion">
-    <ion-card-content>
-      <h1>You have finished the Quiz Successfully</h1>
-      <h1>Total Marks : {{totalscore}} </h1>
-      <h1>Marks Obtain : {{userscore}}</h1>
-      <h1>Your Percentage of Marks: {{percentage}}%</h1>
+                    </ion-col>
 
-      <ion-button shape="round" (click)="gotoCourse()">Back to Course</ion-button>
-      <ion-button *ngIf="isCertificate ==1" shape="round" (click)="getCertificate()">Get certificate</ion-button>
-    
-      <!-- <ion-grid>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <!-- -->
+    <div class="ion_p bop">
+        <ion-card class="quiz-details vop" *ngIf="!showQuestion">
+            <ion-card-content>
+                <ion-img class="logo-circle" src="/assets/imgs/tick.png"></ion-img>
+                <h1 class="w">You have finished the Quiz Successfully</h1>
+                <h1 class="w1">Total Marks : {{totalscore}} </h1>
+                <h1 class="w2">Marks Obtain : {{userscore}}</h1>
+                <h1 class="w3">Your Percentage of Marks: {{percentage}}%</h1>
+
+                <ion-button shape="round" (click)="gotoCourse()" class="bol">Back to Course</ion-button>
+                <ion-button *ngIf="isCertificate ==1" shape="round" (click)="getCertificate()" class="nol">Get certificate</ion-button>
+
+                <!-- <ion-grid>
       <ion-row>
         <ion-col>
           <div>
@@ -75,6 +109,7 @@
         </ion-col>
       </ion-row>
     </ion-grid> -->
-    </ion-card-content>
-  </ion-card>
+            </ion-card-content>
+        </ion-card>
+    </div>
 </ion-content>

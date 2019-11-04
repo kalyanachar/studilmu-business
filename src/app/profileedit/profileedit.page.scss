@@ -1,0 +1,57 @@
+ion-toolbar.vb {
+    --background: #1f5b87 !important;
+    display: inline-block;
+    width: 100%;
+}
+
+ion-toolbar.vb ion-title {
+    font-weight: normal;
+}
+
+.po {
+    --background: #ffffff !important;
+}
+
+ion-toolbar.vb .button-inner {
+    color: #ffffff;
+}
+
+.ko form {
+    padding: 0;
+}
+
+.ko form ion-label {
+    --ion-color-base: #666666 !Important;
+}
+
+.ko form ion-item {
+    padding: 0 15px 0 0;
+}
+
+.ko ion-button span {
+    background: #de5b61;
+    padding: 10px 15px;
+    min-width: 214px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 17px;
+    position: absolute;
+    border-radius: 6px;
+}
+
+.ko ion-button {
+    --border-radius: 6px;
+    --padding-top: 18px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --padding-bottom: 18px;
+    --ion-color-base: #ffffff !important;
+}
+
+ion-toolbar.vb ion-back-button button {
+    --color: #ffffff !important;
+}
+
+ion-toolbar.vb ion-buttons ion-back-button .sc-ion-back-button-ios {
+    --color: #ffffff !important;
+}
