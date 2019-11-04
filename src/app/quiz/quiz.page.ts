@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment';
 export class QuizPage implements OnInit {
   lecId:any;
   quizDetails:any ={};
+
   constructor(
     private router: Router,
     public toastController: ToastController,
@@ -23,6 +24,7 @@ export class QuizPage implements OnInit {
   ngOnInit() {
     this.lecId =this.route.snapshot.paramMap.get('id');
     this.getquizDetails(this.lecId);
+
   }
 
   getquizDetails(id) {
@@ -34,7 +36,7 @@ export class QuizPage implements OnInit {
     console.log(data);
     this.mainService.getquizDetails(data).subscribe(
       res => {
-        console.log(res);
+        console.log("Quiz Details==>",res);
       this.quizDetails = res;
       },
       error => {
@@ -46,5 +48,7 @@ export class QuizPage implements OnInit {
   gotoQuizDetails(lecid) {
     this.router.navigate(['/quizdetails',lecid]);
   }
+
+  
 
 }

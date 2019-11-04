@@ -92,6 +92,10 @@ profileStatus(data): Observable<any> {
     return this.http.post(environment.apiEndpoint + 'user/business_CourseInfo', data)
   }
 
+  listassignment(data): Observable<any> {
+    return this.http.post(environment.apiEndpoint + 'user/business_assignment', data)
+  }
+
 
 
 }

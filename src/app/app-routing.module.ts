@@ -13,17 +13,15 @@ const routes: Routes = [
   { path: 'profileedit', loadChildren: './profileedit/profileedit.module#ProfileeditPageModule' },
   { path: 'companyprofile', loadChildren: './companyprofile/companyprofile.module#CompanyprofilePageModule' },
   { path: 'listcourse', loadChildren: './listcourse/listcourse.module#ListcoursePageModule' },
-  { path: 'coursedetails', loadChildren: './coursedetails/coursedetails.module#CoursedetailsPageModule' },
   { path: 'aftersplash', loadChildren: './aftersplash/aftersplash.module#AftersplashPageModule' },
   { path: 'forgotpassword', loadChildren: './forgotpassword/forgotpassword.module#ForgotpasswordPageModule' },
-  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
   { path: 'course/:id', loadChildren: './course/course.module#CoursePageModule' },
   { path: 'coursefeedback/:id', loadChildren: './coursefeedback/coursefeedback.module#CoursefeedbackPageModule' },
-  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
   { path: 'quiz/:id', loadChildren: './quiz/quiz.module#QuizPageModule' },
   { path: 'video', loadChildren: './video/video.module#VideoPageModule' },
   { path: 'quizdetails/:id', loadChildren: './quizdetails/quizdetails.module#QuizdetailsPageModule' },
   { path: 'certificate/:cid/:quizid/:companyid', loadChildren: './certificate/certificate.module#CertificatePageModule' },
+  { path: 'marks/:id', loadChildren: './marks/marks.module#MarksPageModule' },
 ];
 
 @NgModule({

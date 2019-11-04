@@ -36,7 +36,7 @@
           </ion-row>
           <ion-row class="row" no-padding="">
              <ion-col size="10">
-                <ion-button color="success" expand="full" (click)="gotoCourse(course)" *ngIf="course.taken ==0 && today <= course.end_date">Mulai Kursus</ion-button>
+                <ion-button color="success" expand="full" (click)="gotoCourse(course)" *ngIf="course.taken ==0 && today <= course.end_date">Take Course</ion-button>
                 <ion-button color="danger" expand="full" *ngIf="today > course.end_date">Expired</ion-button>
              </ion-col>
              <ion-col size="2">

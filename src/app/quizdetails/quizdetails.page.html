@@ -9,7 +9,7 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Quiz Details</ion-title>
+    <ion-title>{{pageTitle}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +21,8 @@
       </ion-card-title>
       <ion-row class="row" no-padding="">
         <ion-col class="col">
-          <h2>{{quizDetails.question}}</h2>
+          <!-- <h2 >{{quizDetails.question}}</h2> -->
+          <h2 ><span [innerHTML]= "quizDetails.question"></span></h2>
           <ion-list no-lines radio-group>
             <ion-radio-group>
               <ion-item *ngFor="let ansOption of ansOptions; let i = index" class="list-course" [ngClass]="{'ans-success':ansStatus==1 && ansindex ==i, 'ans-error': ansStatus==2 && ansindex ==i}">

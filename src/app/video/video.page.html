@@ -20,14 +20,14 @@
         <source [src]="videoSource" type="video/mp4" />
     
       </video> -->
-
+      <ion-title size="large" text-wrap>{{this.courseDetails.title}}</ion-title>
       <vg-player >
           <vg-overlay-play></vg-overlay-play>
           <vg-buffering></vg-buffering>
           <vg-controls>
               <vg-play-pause></vg-play-pause>
               <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-              <vg-quality-selector *ngIf="bitrates" (onBitrateChange)="setBitrate($event)" [bitrates]="bitrates"></vg-quality-selector>
+              <!-- <vg-quality-selector *ngIf="bitrates" (onBitrateChange)="setBitrate($event)" [bitrates]="bitrates"></vg-quality-selector> -->
               <vg-mute></vg-mute>
               <vg-volume></vg-volume>
       

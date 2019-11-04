@@ -34,6 +34,7 @@ export class QuizdetailsPage implements OnInit {
   private downloadPath = null
   path:any;
   showPath:any;
+  pageTitle:string="Quiz Details"
   constructor(
     private router: Router,
     public toastController: ToastController,
@@ -190,6 +191,12 @@ export class QuizdetailsPage implements OnInit {
       res => {
         console.log("Final Result Success==>", res);
         if(res['code']==1) {
+          if(res['is_quiz_exist'] == 0) {
+            this.pageTitle = "Final Test result";
+          }
+          else {
+            this.pageTitle = "Quiz result";
+          }
           this.percentage = res['percentage'];
           this.totalscore = res['totalscore'];
           this.userscore = res['userscore'];

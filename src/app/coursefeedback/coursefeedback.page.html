@@ -36,9 +36,12 @@
         </div>
       </ion-col>
       <ion-col size="2">
-        <div>
-          <ion-checkbox disabled="true" checked="true"></ion-checkbox> Passed <br>
-         
+        <div *ngIf="courseDetails.takenDate != '0000-00-00' && courseDetails.taken ==1">
+          <ion-checkbox disabled="true" checked="true" ></ion-checkbox> Passed <br>
+       
+        </div>
+        <div *ngIf="courseDetails.takenDate == '0000-00-00' && courseDetails.taken ==0">
+          <ion-checkbox disabled="true" checked="flase" *ngIf="courseDetails.takenDate == '0000-00-00' && courseDetails.taken ==0"></ion-checkbox> Passed <br>
         </div>
         <!-- <div *ngIf="courseDetails.status ==0">
             <ion-checkbox disabled="true" checked="false"></ion-checkbox> Not Yet
@@ -46,7 +49,7 @@
       </ion-col>
       <ion-col size="6">
         <div>
-          {{courseDetails.posttitle}},{{courseDetails.assigndate | date:'dd MMM yyyy'}} 
+        {{courseDetails.posttitle}},{{courseDetails.takenDate | date:'dd MMM yyyy'}}
         </div>
       </ion-col>
     </ion-row>
@@ -151,7 +154,7 @@
           </ion-col>
           <ion-col size="2">
             <ion-row>
-                <ion-col *ngFor="let CourseContentassignment of CourseContentAssignment">
+                <ion-col *ngFor="let courseContentassignment of CourseContentAssignment">
                     <!-- <div *ngIf="courseContentpretest.status==1">
                         <ion-checkbox disabled="true" checked="true" ></ion-checkbox> Passed <br>
                        
@@ -159,18 +162,19 @@
                       <div *ngIf="courseContentpretest.status==0">
                           <ion-checkbox disabled="true" checked="false" *ngIf="courseContentpretest.status==0"></ion-checkbox> Not Yet
                         </div> -->
-                        <span>N/A</span>  
+                        <span *ngIf="courseContentassignment.completionDate =='0000-00-0'">N/A</span>  
                   </ion-col>
                   
             </ion-row>
             
           </ion-col>
           <ion-col size="6">
-            <div *ngFor="let CourseContentassignment of CourseContentAssignment">
-              <span *ngIf="CourseContentassignment.completionDate !=''">
-                  {{courseContentpretest.completionDate | date:'dd MMM yyyy'}}
+            <div *ngFor="let courseContentassignment of CourseContentAssignment">
+               
+              <span *ngIf="courseContentassignment.completionDate !='0000-00-0'">
+                  {{courseContentassignment.completionDate | date:'dd MMM yyyy'}}
               </span>
-              <span *ngIf="CourseContentassignment.completionDate ==''">
+              <span *ngIf="courseContentassignment.completionDate =='0000-00-0'">
                  N/A
               </span>
               <!-- {{courseContentpretest.percentage}}% , {{courseContentpretest.completionDate | date:'dd MMM yyyy'}} -->

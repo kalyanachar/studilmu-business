@@ -1,0 +1,29 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>marks</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+  
+      <ion-title>{{pageTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-card class="quiz-details">
+    <ion-card-content>
+      <h1>You have finished the Quiz Successfully</h1>
+      <h1>Total Marks : {{totalscore}} </h1>
+      <h1>Marks Obtain : {{userscore}}</h1>
+      <h1>Your Percentage of Marks: {{percentage}}%</h1>
+
+      <ion-button shape="round" (click)="gotoCourse()">Back to Course</ion-button>
+      <ion-button *ngIf="isCertificate ==1" shape="round" (click)="getCertificate()">Get certificate</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
