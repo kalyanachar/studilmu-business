@@ -18,21 +18,10 @@
 
             <div class="prograss-maindiv p-absolute w-50 mx-auto gf">
                 <div class="progress-text text-white">
-                    <!-- <div class="row">
-          <div class="col-sm-6 col-md-6">
-                  <a href="/Users/user_profile/10652/590" style="color:#ffffff;">Rate this course</a>
-                  </div>
-            <div class="col-sm-6 col-md-6 text-right">
-              <span ng-bind-html="progressInfo.progressString | translate"><b>10</b> of <b>11</b> items complete</span>
-            </div>
-          </div> -->
+
                     <ion-grid>
                         <ion-row>
-                            <!-- <ion-col>
-                <div>
-                  1 of 3
-                </div>
-              </ion-col> -->
+
                             <ion-col size="12">
                                 <div class="ion-text-end">
                                     {{totalViewsCount}} of {{totalLec}} items complete
@@ -44,10 +33,9 @@
                 </div>
 
                 <div class="progress progress-medium">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                        <!-- <span class="sr-only">100% Complete</span> -->
+                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                        aria-valuemax="100" style="width:100%">
                     </div>
-                    <!-- <div class="custom-bar progress-bar slideInLeft wow animated" style="width: 20%; visibility: visible; animation-name: slideInLeft;"></div> -->
                 </div>
             </div>
         </div>
@@ -88,175 +76,80 @@
                     <ion-item lines="none">Certificate of Completion</ion-item>
 
                     <p [innerHTML]='lecDesc'></p>
-                    <!-- <ion-item-divider>
-            <ion-label>1111111Description23:</ion-label>
-            <p [innerHTML]='lecDesc'></p>
-          
-        </ion-item-divider> -->
-
-<<<<<<< HEAD
-        
-      <ion-card padding *ngFor="let course of courseContentNew; let i = index" class="course-content{{i}}">
-        <!-- <ion-icon color="primary" item-right [name]="d.icon"></ion-icon> -->
-      <ion-title class="lec-title" (click)="toggleDetails(course)" *ngIf="course.lectureInfo.length >0"> Section {{i+1}}  <span> {{i+1}}/{{lessonCount}}</span></ion-title>
-        <div *ngIf="course.showDetails" class="course-details">
-          <div *ngFor="let lecture of course.lectureInfo; let i = index" class="lec-info" (click)="gotoPage(lecture)">
-            <ion-icon ios="ios-help-circle" md="md-help-circle" *ngIf="lecture.lectureType=='quiz' || lecture.lectureType=='link'"></ion-icon>
-            <ion-icon name="play-circle" *ngIf="lecture.lectureType=='video'"></ion-icon>
-                 <ion-label text-wrap>{{i+1}}. {{lecture[3]}} </ion-label>
-              
-                <!-- <span *ngIf="lecture.type==2" class="dot dot{{i}} dot-blue"></span>
-
-                <span *ngIf="lecture.type !=2" class="dot dot{{i}}"   [ngClass]="{
-                  'dot-black': lecture.readLectureInfo==0 || lecture.readLectureInfo=='' ,
-                  'dot-blue': lecture.readLectureInfo ==1
-                }"></span> -->
-                <span  class="dot dot{{i}}"   [ngClass]="{
-=======
                 </div>
             </div>
             <div class="xt">
                 <div *ngIf="currentSegment=='coursecontent'">
 
-                    <!-- <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto">
-              <source [src]="url" type="video/mp4" />
-          </video> -->
-                    <!-- <ion-card (click)="expandItem(item)" *ngFor="let item of courseContent">
-        <ion-card-header>
-          <ion-card-title>My Neighbor Totoro</ion-card-title>
-        </ion-card-header>
-    
-        <ion-card-content>
-          <app-expandable expandHeight="150px" [expanded]="item.expanded">
-            <p>
-              Hello there.
-            </p>
-            <p>
-              Hello there.
-            </p>
-            <p>
-              Hello there.
-            </p>
-            <p>
-              Hello there.
-            </p>
-            <p>
-              Hello there.
-            </p>
-            <p>
-              Hello there.
-            </p>
-          </app-expandable>
-          
-        </ion-card-content>
-      </ion-card> -->
-                    <!-- <ion-item padding *ngFor="let d of data" (click)="toggleDetails(d)"><ion-icon color="primary" item-right [name]="d.icon"></ion-icon>
-        {{d.title}}
-        <div *ngIf="d.showDetails">{{d.details}}</div>
-      </ion-item> -->
-                    <ion-card padding *ngFor="let course of courseContentNew; let i = index" class="course-content{{i}}">
-                        <!-- <ion-icon color="primary" item-right [name]="d.icon"></ion-icon> -->
-                        <ion-title class="lec-title" (click)="toggleDetails(course)" *ngIf="course.lectureInfo.length >0">
-                            <h6>Section {{i+1}} </h6><span> {{i+1}}/{{lessonCount}}</span> <img src="assets/imgs/down.png" /></ion-title>
+                    <ion-card padding *ngFor="let course of courseContentNew; let i = index"
+                        class="course-content{{i}}">
+                        <ion-title class="lec-title" (click)="toggleDetails(course)"
+                            *ngIf="course.lectureInfo.length >0">
+                            <h6>Section {{i+1}} </h6><span> {{i+1}}/{{lessonCount}}</span> <img
+                                src="assets/imgs/down.png" />
+                        </ion-title>
                         <div *ngIf="course.showDetails" class="course-details">
-                            <div *ngFor="let lecture of course.lectureInfo; let i = index" class="lec-info" (click)="gotoPage(lecture)">
-                                <ion-icon ios="ios-help-circle" md="md-help-circle" *ngIf="lecture.lectureType=='quiz' || lecture.lectureType=='link'"></ion-icon>
+                            <div *ngFor="let lecture of course.lectureInfo; let i = index" class="lec-info"
+                                (click)="gotoPage(lecture)">
+                                <ion-icon ios="ios-help-circle" md="md-help-circle"
+                                    *ngIf="lecture.lectureType=='quiz' || lecture.lectureType=='link'"></ion-icon>
                                 <ion-icon name="play-circle" *ngIf="lecture.lectureType=='video'"></ion-icon>
                                 <ion-label text-wrap>{{i+1}}. {{lecture[3]}} </ion-label>
-
-                                <span *ngIf=" lecture.type==2" class="dot dot{{i}} dot-blue"></span>
-
-                                <span *ngIf=" lecture.type !=2" class="dot dot{{i}}" [ngClass]="{
->>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
-                  'dot-black': lecture.readLectureInfo==0 || lecture.readLectureInfo=='' ,
-                  'dot-blue': lecture.readLectureInfo ==1
-                }"></span>
+                                <span class="dot dot{{i}}" [ngClass]="{
+                    'dot-black': lecture.readLectureInfo==0 || lecture.readLectureInfo=='' ,
+                    'dot-blue': lecture.readLectureInfo ==1
+                  }"></span>
                             </div>
 
 
                         </div>
                     </ion-card>
-                    <!-- <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto">
-          <source [src]="url" type="video/mp4" />
-      </video> -->
-<<<<<<< HEAD
-     
-
-    </div>
-      <div *ngIf="currentSegment=='assignment'" class="assignment">
-          <ion-card class="list-course" *ngIf="assignmentDetails.code ==1">
-
-              <!-- <img src="assets/imgs/c1.jpg" /> -->
-              <ion-card-content>
-                 <ion-card-title>
-                   {{assignmentDetails.title}}
-                 </ion-card-title>
-                 <ion-row class="row" no-padding="">
-                    <ion-col class="col">
-                       <ion-label>   {{assignmentDetails.description}}</ion-label>
-                       
-                    </ion-col>
-                    </ion-row>
-                    <ion-row class="row" no-padding="">
-                    <ion-col class="col"
-                    >
-                    
-                       <ion-button color="success" expand="full"  (click)="gotoDownload(assignmentDetails.downloadUrl)">Download Assignment</ion-button>
-                    </ion-col>
-                 </ion-row>
-                 <!-- <ion-row class="row" no-padding="">
-                    <ion-col size="12">
-                       <ion-button color="success" expand="full" >Upload Your Assignment</ion-button>
-                       
-                    </ion-col>
-                    
-                 </ion-row> -->
-              </ion-card-content>
-           </ion-card>
-           <ion-card class="list-course" *ngIf="assignmentDetails.code ==2">
-
-              <!-- <img src="assets/imgs/c1.jpg" /> -->
-              <ion-card-content>
-                 <ion-card-title>
-                    {{assignmentDetails.msg}}
-                 </ion-card-title>
-                
-              </ion-card-content>
-           </ion-card>
-
-           
-      </div>
-    </ion-card-content>
-  </ion-card>
-=======
-
-
                 </div>
             </div>
             <div class="zt">
                 <div *ngIf="currentSegment=='assignment'" class="assignment">
-                    <ion-card class="list-course">
-
-                        <!-- <img src="assets/imgs/c1.jpg" /> -->
+                    <ion-card class="list-course" *ngIf="assignmentDetails.code ==1">
                         <ion-card-content>
                             <ion-card-title>
-                                Assignment - Handling Customer Objection
+                                {{assignmentDetails.title}}
                             </ion-card-title>
                             <ion-row class="row" no-padding="">
                                 <ion-col class="col">
-                                    <ion-label>Lets Create Sales Script</ion-label>
+                                    <ion-label> {{assignmentDetails.description}}</ion-label>
 
                                 </ion-col>
                             </ion-row>
                             <ion-row class="row" no-padding="">
                                 <ion-col class="col">
-                                    <ion-label> Workbook Handling Customer Objection.Pdf</ion-label>
+                                    <ion-label> </ion-label>
 
                                 </ion-col>
                             </ion-row>
                             <ion-row class="row" no-padding="">
                                 <ion-col size="12">
-                                    <ion-button color="success" expand="full">Upload Your Assignment</ion-button>
+                                    <ion-button color="success" expand="full"
+                                        (click)="gotoDownload(assignmentDetails.downloadUrl)">Download your uploaded
+                                        assignment</ion-button>
+                                </ion-col>
+
+                            </ion-row>
+                            <ion-row class="row" no-padding="">
+                                <ion-col size="12">
+                                    <ion-label>Assignment uploaded by you</ion-label>
+                                    <ion-button *ngIf="assignmentDetails.assignmentExist==1" color="success"
+                                        expand="full" (click)="gotoDownload(assignmentDetails.assignmentURL)">Download
+                                        Your Uploaded Assignment</ion-button>
+                                    <span *ngIf="assignmentDetails.assignmentExist==0"> No Assignment Found</span>
+                                </ion-col>
+
+                            </ion-row>
+                            <ion-row class="row" no-padding="">
+                                <ion-col size="12">
+                                    <input style="display:none;" #fileUpload type="file"
+                                        (click)="fileUpload.value = null"
+                                        (change)="importFile($event,assignmentDetails)">
+                                    <ion-button color="success" expand="full" (click)="fileUpload.click()">Upload
+                                        Assignment</ion-button>
 
                                 </ion-col>
 
@@ -264,10 +157,16 @@
                         </ion-card-content>
                     </ion-card>
 
+                    <ion-card class="list-course" *ngIf="assignmentDetails.code ==2">
+                        <ion-card-content>
+                            <ion-card-title>
+                                {{assignmentDetails.msg}}
+                            </ion-card-title>
 
+                        </ion-card-content>
+                    </ion-card>
                 </div>
             </div>
         </ion-card-content>
     </ion-card>
->>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
 </ion-content>

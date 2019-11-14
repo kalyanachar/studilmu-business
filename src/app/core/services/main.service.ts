@@ -96,6 +96,14 @@ profileStatus(data): Observable<any> {
     return this.http.post(environment.apiEndpoint + 'user/business_assignment', data)
   }
 
+  uploadassignment(formData): Observable<any> {
+    return this.http.post(environment.apiEndpoint + 'user/business_uploadAssignment', formData)
+  }
+
+
+  
+  //business_uploadAssignment
+
 
 
 }

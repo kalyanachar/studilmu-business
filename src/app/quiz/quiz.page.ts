@@ -33,10 +33,8 @@ export class QuizPage implements OnInit {
       "lectureid":id,
       "userid":localStorage.getItem('userId')
     }
-    console.log(data);
     this.mainService.getquizDetails(data).subscribe(
       res => {
-        console.log("Quiz Details==>",res);
       this.quizDetails = res;
       },
       error => {

@@ -65,10 +65,8 @@ export class ProfileeditPage implements OnInit {
       "apikey": environment.apikey,
       "userid": localStorage.getItem('userId')
     }
-    console.log(data);
     this.mainService.getuserDetails(data).subscribe(
       res => {
-        console.log("User Details==>",res);
         this.userDetails = res.UserDetails;
         this.editProfileForm = this.formBuilder.group({
           emptype: new FormControl('Staff'),
@@ -107,9 +105,6 @@ export class ProfileeditPage implements OnInit {
  
 
   onSubmit(editProfileForm) {
-    // console.log(values);
-    console.log(editProfileForm.value);
-
     var data ={
       "userid": localStorage.getItem('userId'),
       "apikey":environment.apikey,
@@ -129,42 +124,19 @@ export class ProfileeditPage implements OnInit {
 
     this.mainService.editProfile(data).subscribe(
       res => {
-        console.log("Edit Result==>", res['userDetails']);
-     
        localStorage.setItem('userFullName', res['userDetails']['full_name']);
         this.mainService.loginStatus(true);
         this.router.navigateByUrl('/profileview');
-
-        // if (res.ack == 1) {
-        //   this.presentToast(res.msg);
-        //   // this.mainService.loginStatus(true);
-        //   // localStorage.setItem('isLoggedin', 'true');
-        //   // localStorage.setItem('userId', res['UserDetails']['id']);
-        //   // localStorage.setItem('userEmail', res['UserDetails']['email']);
-        //   // localStorage.setItem('userFirstName', res['UserDetails']['firstname']);
-        //   // localStorage.setItem('userLastName', res['UserDetails']['lastname']);
-
-
-        //  this.router.navigateByUrl('/profileview');
-        // }
-        // else {
-        //   this.presentToast(res.msg);
-        // }
-
-
       },
       error => {
         console.log("Error==>", error);
         this.presentToast('Error!!!');
       }
     )
-    //  this.router.navigate(["/user"]);
   }
 
   onChange(event) {
-    console.log(event);
   }
-
 
   async presentToast(msg) {
     const toast = await this.toastController.create({

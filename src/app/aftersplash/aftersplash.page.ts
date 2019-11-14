@@ -17,11 +17,8 @@ export class AftersplashPage implements OnInit {
   ngOnInit() {
     this.getApiKey();
   }
-  skip() {
-    
+  skip() { 
   }
-
-
   getApiKey() {
     var data = {
       "keyDetails":1
@@ -29,16 +26,8 @@ export class AftersplashPage implements OnInit {
 
     this.mainService.getAPiKey(data).subscribe(
       res => {
-        console.log("Login Result==>", res);
-        // if (res.ack == 1) {
-        //   localStorage.setItem('isLoggedin', 'true');
-        // }
-        // else {
-        // }
       },
       error => {
-        console.log("Error==>", error);
-     
       }
     )
   }

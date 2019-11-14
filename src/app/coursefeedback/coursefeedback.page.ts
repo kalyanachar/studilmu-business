@@ -30,35 +30,24 @@ export class CoursefeedbackPage implements OnInit {
     this.courseId = this.route.snapshot.paramMap.get('id');
     this.courseInfo();
   }
-
-
   courseInfo() {
     var data = {
       "apikey":environment.apikey,
       "userid":localStorage.getItem('userId'),
       "courseid":this.courseId
     }
-    console.log(data);
     this.mainService.businessCourseInfo(data).subscribe(
       res => {
-        console.log(res);
         this.courseDetails = res.CourseInfo[0];
-        console.log(this.courseDetails);
         this.CourseContentPreTest= res.CourseContentInfo[0];
         this.CourseContentWatchVideo= [...res.CourseContentInfo[1], ...res.CourseContentInfo[2]];
         this.CourseContentFinalTest= res.CourseContentInfo[3];
-        console.log("Final Test==>",this.CourseContentFinalTest)
         this.CourseContentAssignment= res.CourseContentInfo[4];
-        console.log("Assignment==>",this.CourseContentAssignment);
         this.CourseContentCertificate= res.CourseContentInfo[5];
-        console.log("Certificate==>",this.CourseContentCertificate);
-
       },
       error => {
         console.log("Error==>", error);
       }
     )
   }
-
-
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController,MenuController,NavController } from '@ionic/angular';
-import { Router,ActivatedRoute } from '@angular/router';
+import { ToastController, MenuController, NavController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MainService } from '../core/services/main.service';
 import { environment } from '../../environments/environment';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
@@ -10,22 +10,22 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
   styleUrls: ['./marks.page.scss'],
 })
 export class MarksPage implements OnInit {
-  percentage:any;
-  totalscore :any;
-  userscore :any;
-  courseId:any;
-  isCertificate:any;
-  companyId:any;
-  quizId:any;
-  lecId:any;
-  userId:any;
-  pageTitle:string="";
+  percentage: any;
+  totalscore: any;
+  userscore: any;
+  courseId: any;
+  isCertificate: any;
+  companyId: any;
+  quizId: any;
+  lecId: any;
+  userId: any;
+  pageTitle: string = "";
   constructor(
     private router: Router,
     public toastController: ToastController,
     public mainService: MainService,
     public menuCtrl: MenuController,
-    public navCtrl:NavController,
+    public navCtrl: NavController,
     private route: ActivatedRoute,
     private iab: InAppBrowser,
   ) { }
@@ -42,12 +42,10 @@ export class MarksPage implements OnInit {
       "lectureid": this.lecId,
       "userid": localStorage.getItem('userId')
     }
-    console.log(data);
     this.mainService.quizFinalResult(data).subscribe(
       res => {
-        console.log("Final Result Success==>", res);
-        if(res['code']==1) {
-          if(res['is_quiz_exist'] == 0) {
+        if (res['code'] == 1) {
+          if (res['is_quiz_exist'] == 0) {
             this.pageTitle = "Final Test result";
           }
           else {
@@ -57,10 +55,10 @@ export class MarksPage implements OnInit {
           this.totalscore = res['totalscore'];
           this.userscore = res['userscore'];
           this.courseId = res['courseid'];
-          this.isCertificate =res['certificate'];
-          this.companyId =res['companyid'];
-          this.quizId =res['quizid'];
-          
+          this.isCertificate = res['certificate'];
+          this.companyId = res['companyid'];
+          this.quizId = res['quizid'];
+
         }
         else {
 
@@ -74,12 +72,12 @@ export class MarksPage implements OnInit {
   }
 
   getCertificate() {
-    this.iab.create("https://business.studilmu.com/learns/app_certification/"+this.quizId+"/"+this.userId+"/"+this.companyId,'_system');
+    this.iab.create("https://business.studilmu.com/learns/app_certification/" + this.quizId + "/" + this.userId + "/" + this.companyId, '_system');
   }
   gotoCourse() {
-    this.router.navigate(['/course',this.courseId]);
-   }
- 
+    this.router.navigate(['/course', this.courseId]);
+  }
+
 
 
 }

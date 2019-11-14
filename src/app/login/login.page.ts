@@ -5,6 +5,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { MainService } from '../core/services/main.service';
 import { environment } from '../../environments/environment';
 import { Storage } from '@ionic/storage';
+import { AuthenticationService } from '../core/services/authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -19,10 +20,9 @@ export class LoginPage implements OnInit {
     public toastController: ToastController,
     public mainService: MainService,
     public menuCtrl: MenuController,
-    private storage: Storage
+    private storage: Storage,
+    private authService: AuthenticationService
   ) {
-  //  alert(environment.apikey);
-
   }
 
   ngOnInit() {
@@ -45,9 +45,6 @@ export class LoginPage implements OnInit {
   ionViewWillEnter() {
     this.menuCtrl.close();
   }
-  // login() {
-  //   this.router.navigateByUrl('/home');
-  // }
   gotoPage() {
     this.router.navigateByUrl('/forgotpassword');
   }
@@ -60,22 +57,16 @@ export class LoginPage implements OnInit {
     'password': [
       { type: 'required', message: 'Password is required.' },
       { type: 'minlength', message: 'Password must be at least 8 characters long.' },
-      // { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
-    ]
+     ]
 
   };
 
-
   onSubmit(loginForm) {
-    // console.log(values);
-    console.log(loginForm.value);
     this.loginForm.value.apikey = environment.apikey;
     this.mainService.login(this.loginForm.value).subscribe(
       res => {
-        console.log("Login Result==>", res);
         if (res.ack == 1) {
           this.presentToast(res.msg);
-          this.mainService.loginStatus(true);
           localStorage.setItem('isLoggedin', 'true');
           localStorage.setItem('userId', res['UserDetails']['id']);
           localStorage.setItem('userEmail', res['UserDetails']['email']);
@@ -86,24 +77,18 @@ export class LoginPage implements OnInit {
           localStorage.setItem('userDesignationId', res['UserDetails']['designation_id']);
           localStorage.setItem('userImage', res['UserDetails']['profile_image']);
           this.mainService.loginStatus(true)
-
-          this.router.navigateByUrl('/home');//
+          this.authService.login(res.result);
         }
         else {
           this.presentToast(res.msg);
         }
-
-
       },
       error => {
         console.log("Error==>", error);
         this.presentToast('Error!!!');
       }
     )
-    //  this.router.navigate(["/user"]);
   }
-
-
   async presentToast(msg) {
     const toast = await this.toastController.create({
       message: msg,

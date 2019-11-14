@@ -54,10 +54,8 @@ export class ProfileviewPage implements OnInit {
       "apikey": environment.apikey,
       "userid": localStorage.getItem('userId')
     }
-    console.log("User Details ==>",data);
     this.mainService.getuserDetails(data).subscribe(
       res => {
-        console.log(res);
         this.userDetails = res.UserDetails;
       },
       error => {
@@ -66,54 +64,6 @@ export class ProfileviewPage implements OnInit {
     )
   }
 
-//    selectImage() {
-//     const actionSheet = await this.actionSheetController.create({
-//         header: "Select Image source",
-//         buttons: [{
-//                 text: 'Load from Library',
-//                 handler: () = & gt; {
-//                     this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
-//                 }
-//             },
-//             {
-//                 text: 'Use Camera',
-//                 handler: () = & gt; {
-//                     this.takePicture(this.camera.PictureSourceType.CAMERA);
-//                 }
-//             },
-//             {
-//                 text: 'Cancel',
-//                 role: 'cancel'
-//             }
-//         ]
-//     });
-//     await actionSheet.present();
-// }
- 
-// takePicture(sourceType: PictureSourceType) {
-//     var options: CameraOptions = {
-//         quality: 100,
-//         sourceType: sourceType,
-//         saveToPhotoAlbum: false,
-//         correctOrientation: true
-//     };
- 
-//     this.camera.getPicture(options).then(imagePath => {
-//         if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
-//             this.filePath.resolveNativePath(imagePath)
-//                 .then(filePath => {
-//                     let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
-//                     let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
-//                     this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
-//                 });
-//         } else {
-//             var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
-//             var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
-//             this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
-//         }
-//     });
- 
-// }
 async selectImage() {
   let actionSheet = await this.actionSheetCtrl.create({
     header: 'Select Image Source',
@@ -140,7 +90,6 @@ async selectImage() {
 }
 
 public takePicture(sourceType) {
-  // Create options for the Camera Dialog
   var options = {
     quality: 100,
     sourceType: sourceType,
@@ -212,32 +161,17 @@ public uploadImage() {
      }
   };
 
-  console.log("Image Options ==>",options);
-
-  //const fileTransfer: TransferObject = this.transfer.create();
   const fileTransfer: FileTransferObject = this.transfer.create();
-  //this.loading.present();
   this.presentLoadingWithOptions();
-  // this.loading = this.loadingCtrl.create({
-  //   content: 'Uploading...',
-  // });
-  //  this.loading.present();
-  // Use the FileTransfer to upload the image
   fileTransfer.upload(targetPath, environment.apiEndpoint + 'user/business_updateProfilePic', options).then(data => {
-  //  this.loading.dismissAll()
-  console.log("Image Upload Data==>",data);
     this.presentToast('Image succesful uploaded.');
     var userUpdateImg = JSON.parse(data.response);
    localStorage.setItem('userImage', userUpdateImg.imgUrl);
     this.userProfile();
   this.mainService.profileStatus(true);
- // this.loading.onDidDismiss();
-  //  this.getProfileDetails(this.userId);
   }, err => {
-   // this.loading.dismissAll()
    console.log(err);
     this.presentToast('Error while uploading file.');
-   // this.loading.onDidDismiss();
   });
 }
 

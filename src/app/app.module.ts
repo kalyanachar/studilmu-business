@@ -18,25 +18,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-
-
-// import { File } from '@ionic-native/File/ngx';
-//import { FileOpener } from '@ionic-native/file-opener/ngx';
-// import { FileTransfer } from '@ionic-native/file-transfer/ngx';
-//import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
-// Videogular2
-
-
-
-// Material
-// import {
-//   MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule,
-//   MatChipsModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatGridListModule,
-//   MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule,
-//   MatProgressBarModule, MatProgressSpinnerModule, MatStepperIntl, MatRadioModule, MatRippleModule, MatFormFieldModule, MatSelectModule,
-//   MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule,
-//   MatSortModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatStepperModule,
-// } from '@angular/material';
+import { AuthGuardService } from '../app/core/services/auth-guard.service';
+import { AuthenticationService } from '../app/core/services/authentication.service';
 
 //Services
 import { MainService } from '../app/core/services/main.service';
@@ -65,9 +48,8 @@ import { MainService } from '../app/core/services/main.service';
     FileTransfer,
     MainService,
     InAppBrowser,
-    // FileOpener,
-    // DocumentViewer,
-    
+    AuthGuardService,
+    AuthenticationService    
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

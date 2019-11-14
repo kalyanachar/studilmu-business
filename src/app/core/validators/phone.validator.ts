@@ -2,9 +2,7 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 import libphonenumber from 'google-libphonenumber';
 
 export class PhoneValidator {
-
-  // Inspired on: https://github.com/yuyang041060120/ng2-validation/blob/master/src/equal-to/validator.ts
-  static validCountryPhone = (countryControl: AbstractControl): ValidatorFn => {
+static validCountryPhone = (countryControl: AbstractControl): ValidatorFn => {
     let subscribe: boolean = false;
 
     return (phoneControl: AbstractControl): {[key: string]: boolean} => {
@@ -27,7 +25,6 @@ export class PhoneValidator {
             return null;
           }
         }catch(e){
-          // console.log(e);
           return {
             validCountryPhone: true
           };

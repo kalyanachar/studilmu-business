@@ -56,17 +56,13 @@ export class ChangepasswordPage implements OnInit {
 
   onSubmitChangePass(changePasswordForm) {
     this.changePasswordForm.value.apikey = environment.apikey;
-    console.log(this.changePasswordForm.value);
-
     var data  = {
       "email":localStorage.getItem('userEmail'),
       "password":this.changePasswordForm.value.matching_passwords.password,
       "apikey":environment.apikey
     }
-    console.log("Update Password==>",data);
     this.mainService.updatePassword(data).subscribe(
       res => {
-        console.log("Forgot Result==>", res); 
         if (res.code == 1) {
          this.presentToast(res.msg);
          this.router.navigate(["/home"]);

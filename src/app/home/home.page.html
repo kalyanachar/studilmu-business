@@ -20,32 +20,6 @@
         <img src="{{course.modoriginalpath}}" *ngIf="today <= course.end_date" (click)="gotoCourse(course)" />
         <img src="{{course.modoriginalpath}}" *ngIf="today > course.end_date" />
 
-<<<<<<< HEAD
-       <ion-card-content>
-          <ion-card-title>
-           {{course.posttitle}}
-          </ion-card-title>
-          <ion-row class="row" no-padding="">
-             <ion-col class="col">
-                <ion-label>Start Date</ion-label>
-                <p>{{course.start_date | date:'dd MMM yyyy'}}</p>
-             </ion-col>
-             <ion-col class="col" text-right="">
-                <ion-label>End Date</ion-label>
-                <p>{{course.end_date | date:'dd MMM yyyy'}}</p>
-             </ion-col>
-          </ion-row>
-          <ion-row class="row" no-padding="">
-             <ion-col size="10">
-                <ion-button color="success" expand="full" (click)="gotoCourse(course)" *ngIf="course.taken ==0 && today <= course.end_date">Take Course</ion-button>
-                <ion-button color="danger" expand="full" *ngIf="today > course.end_date">Expired</ion-button>
-             </ion-col>
-             <ion-col size="2">
-                <ion-icon name="eye" class="home-rating" (click)="gotoCourseFeedback(course)"></ion-icon>
-             </ion-col>
-          </ion-row>
-       </ion-card-content>
-=======
         <ion-card-content>
             <ion-card-title>
                 {{course.posttitle}}
@@ -72,7 +46,6 @@
                 </div>
             </ion-row>
         </ion-card-content>
->>>>>>> ca6717b1b5a8a7d0629bcd8980016b85d64f002f
     </ion-card>
     <!-- <ion-card>
         <img src="assets/imgs/img1.jpg" />

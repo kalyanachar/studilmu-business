@@ -1,10 +1,11 @@
 .ans-success {
-    background: #0EDC53;
-    --ion-background-color: #0EDC53;
+    background: #0EDC53 !important;
+    --ion-background-color: #0EDC53 !important;
 }
 
 .ans-error {
-    --ion-background-color: #FF4D00;
+    background: #FF4D00 !important;
+    --ion-background-color: #FF4D00 !important;
 }
 
 // ion-item{

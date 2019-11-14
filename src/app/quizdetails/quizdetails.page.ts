@@ -210,15 +210,6 @@ export class QuizdetailsPage implements OnInit {
         else {
 
         }
-        // if(res['code']==1) {
-        //   this.showQuestion =true;
-        //   this.quizDetails = res['quizData'];
-        //   this.ansOptions = JSON.parse(res['quizData']['options']);
-        // }
-        // else {
-        //   this.showQuestion =false;
-        // }
-
       },
       error => {
         console.log("Error==>", error);
@@ -256,7 +247,6 @@ export class QuizdetailsPage implements OnInit {
       "companyid":this.companyId,
       "courseid":this.courseId
     }
-  // this.router.navigate(['/certificate',{data:data}]);
   this.router.navigate(['/certificate',this.courseId,this.quizId,this.companyId])
   }
 
@@ -264,17 +254,5 @@ export class QuizdetailsPage implements OnInit {
     this.iab.create("https://business.studilmu.com/learns/app_certification/"+this.quizId+"/"+this.userId+"/"+this.companyId,'_system');
   }
 
-  // downloadCertificate() {
-  //  console.log("Entered download File with url: ",  this.certificatePdf)
-  //   let url =  this.certificatePdf
-  //   const fileTransfer: FileTransferObject = this.fileX.create();
-  //   fileTransfer.download(url, this.downloadPath).then((entry) => {
-  //     console.log('fileTransfer.download data ** ** ** **:' + JSON.stringify(entry));
-  //   }, (err) => {
-  //     console.log("downloadfile() error: " + JSON.stringify(err));
-  //   });
-  // }
-
-
-
+ 
 }
