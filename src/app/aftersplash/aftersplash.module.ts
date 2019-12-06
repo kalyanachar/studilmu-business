@@ -23,4 +23,4 @@ const routes: Routes = [
   ],
   declarations: [AftersplashPage]
 })
-export class AftersplashPageModule {}
+export class AftersplashPageModule { }

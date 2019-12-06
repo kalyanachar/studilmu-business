@@ -1,8 +1,6 @@
 import { FormControl, FormGroup } from '@angular/forms';
 
 export class PasswordValidator {
-
-  // Inspired on: http://plnkr.co/edit/Zcbg2T3tOxYmhxs7vaAm?p=preview
   static areEqual(formGroup: FormGroup) {
     let val;
     let valid = true;

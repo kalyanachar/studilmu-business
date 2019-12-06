@@ -32,7 +32,6 @@ export class ForgotpasswordPage implements OnInit {
       password: new FormControl('', Validators.compose([
         Validators.minLength(5),
         Validators.required,
-        // Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
       ])),
       confirm_password: new FormControl('', Validators.required)
     }, (formGroup: FormGroup) => {
@@ -92,7 +91,7 @@ export class ForgotpasswordPage implements OnInit {
         }
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -125,12 +124,10 @@ export class ForgotpasswordPage implements OnInit {
         }
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
-
-
   gotoPage() {
     this.router.navigate(["/login"]);
   }

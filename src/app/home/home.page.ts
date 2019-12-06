@@ -22,7 +22,6 @@ export class HomePage {
     public menuCtrl: MenuController,
     public navCtrl: NavController
   ) {
-    // this.menuCtrl.open();
     this.menuCtrl.close();
   }
 
@@ -31,7 +30,6 @@ export class HomePage {
     this.userId = localStorage.getItem('userId');
     this.listCourse();
     this.today = moment().format("YYYY-MM-DD");
-    //alert(moment().format("YYYY-MM-DD"));
 
   }
   ionViewWillEnter() {
@@ -51,7 +49,7 @@ export class HomePage {
         this.courseList = res.CourseDetails;
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -78,7 +76,7 @@ export class HomePage {
         }
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }

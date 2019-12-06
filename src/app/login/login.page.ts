@@ -84,7 +84,7 @@ export class LoginPage implements OnInit {
         }
       },
       error => {
-        console.log("Error==>", error);
+        
         this.presentToast('Error!!!');
       }
     )

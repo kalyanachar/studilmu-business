@@ -1,12 +1,12 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { ToastController, MenuController, NavController,ActionSheetController, Platform, LoadingController } from '@ionic/angular';
+import { ToastController, MenuController,ActionSheetController, Platform, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { Camera, CameraOptions, PictureSourceType } from '@ionic-native/Camera/ngx';
+import { Camera} from '@ionic-native/Camera/ngx';
 import { File, FileEntry } from '@ionic-native/File/ngx';
 import { MainService } from '../core/services/main.service';
 import { FilePath } from '@ionic-native/file-path/ngx';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 
 declare var cordova: any;
 @Component({
@@ -26,13 +26,10 @@ export class ProfileviewPage implements OnInit {
     private router: Router,
     private camera: Camera, 
     private file: File, 
-   // private http: HttpClient, 
-    //private webview: WebView,
     private actionSheetCtrl: ActionSheetController, 
     private toastController: ToastController,
     private platform: Platform, 
     private loadingController: LoadingController,
-   // private ref: ChangeDetectorRef, 
     private filePath: FilePath,
     private transfer: FileTransfer,
     public loadingCtrl: LoadingController,
@@ -42,7 +39,6 @@ export class ProfileviewPage implements OnInit {
   ngOnInit() {
     this.imageBaseUrl = environment.imageBaseUrl;
     this.menuCtrl.close();
-    //  this.menuCtrl.enable(false);
     this.userProfile();
     this.userId = localStorage.getItem('userId');
   }
@@ -59,7 +55,7 @@ export class ProfileviewPage implements OnInit {
         this.userDetails = res.UserDetails;
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -97,9 +93,7 @@ public takePicture(sourceType) {
     correctOrientation: true
   };
  
-  // Get the data of an image
   this.camera.getPicture(options).then((imagePath) => {
-    // Special handling for Android library
     if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
       this.filePath.resolveNativePath(imagePath)
         .then(filePath => {
@@ -117,15 +111,13 @@ public takePicture(sourceType) {
   });
 }
 
-// Create a new name for the image
 private createFileName() {
   var d = new Date(),
   n = d.getTime(),
   newFileName =  n + ".jpg";
   return newFileName;
 }
- 
-// Copy the image to a local folder
+
 private copyFileToLocalDir(namePath, currentName, newFileName) {
   this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
     this.lastImage = newFileName;
@@ -135,8 +127,6 @@ private copyFileToLocalDir(namePath, currentName, newFileName) {
   });
 }
  
-
- // Always get the accurate path to your apps folder
  public pathForImage(img) {
   if (img === null) {
     return '';
@@ -146,9 +136,7 @@ private copyFileToLocalDir(namePath, currentName, newFileName) {
 }
 
 public uploadImage() {
-  // File for Upload
   var targetPath = this.pathForImage(this.lastImage);
-  // File name only
   var filename = this.lastImage;
   var options = {
     fileKey: "profile",
@@ -170,7 +158,6 @@ public uploadImage() {
     this.userProfile();
   this.mainService.profileStatus(true);
   }, err => {
-   console.log(err);
     this.presentToast('Error while uploading file.');
   });
 }

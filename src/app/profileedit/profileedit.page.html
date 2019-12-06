@@ -66,12 +66,6 @@
 
         <ion-item>
             <ion-label position="floating" color="primary">Language</ion-label>
-            <!-- <ion-select formControlName="language_preference" cancelText="Cancel" okText="OK" (change)='onChange($event.target.value)'>
-                <ion-select-option  [value]="Es">Bahasa Indonesia</ion-select-option>
-                <ion-select-option  [value]="En">English</ion-select-option>
-                <ion-select-option  [value]="Ot">Others</ion-select-option>
-              </ion-select> -->
-
             <ion-select formControlName="language_preference" cancelText="Cancel" okText="OK">
                 <ion-select-option *ngFor="let item of languages" [value]="item.value">{{item.name}}</ion-select-option>
             </ion-select>

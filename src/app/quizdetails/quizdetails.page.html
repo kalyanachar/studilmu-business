@@ -1,8 +1,4 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>quiz</ion-title>
-  </ion-toolbar>
-</ion-header> -->
+
 <ion-header>
     <ion-toolbar class="vb">
         <ion-buttons slot="start">
@@ -22,13 +18,11 @@
                 </ion-card-title>
                 <ion-row class="row" no-padding="">
                     <ion-col class="col">
-                        <!-- <h2>{{quizDetails.question}}</h2> -->
                         <h2 [innerHTML]="quizDetails.question"></h2>
                         <ion-list no-lines radio-group class="mnp">
                             <ion-radio-group class="rt">
                                 <ion-item *ngFor="let ansOption of ansOptions; let i = index" class="list-course"
                                     [ngClass]="{'ans-success':ansStatus==1 && ansindex ==i, 'ans-error': ansStatus==2 && ansindex ==i}">
-                                    <!-- <ion-label>{{i+1}}. {{ansOption.answer}} </ion-label> -->
                                     <ion-label>{{i+1}}.<span [innerHTML]="ansOption.answer"></span> </ion-label>
                                     <ion-radio (ionSelect)="selectAnswer(ansOption,quizDetails,i)"></ion-radio>
                                 </ion-item>
@@ -47,7 +41,6 @@
             </ion-card-content>
         </ion-card>
     </div>
-    <!-- -->
     <div class="ion_p bop">
         <ion-card class="quiz-details vop" *ngIf="!showQuestion">
             <ion-card-content>

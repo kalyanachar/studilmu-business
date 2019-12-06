@@ -31,11 +31,6 @@ export class AppComponent {
       title: 'Login',
       url: '/login',
       icon: 'list'
-    },
-    {
-      title: 'List Course',
-      url: '/listcourse',
-      icon: 'list'
     }
   ];
 
@@ -44,7 +39,7 @@ export class AppComponent {
   userEmail:any;
   userImage:any;
   imageBaseUrl:any;
-  navLinksArray:any = [];// store route links as the user navigates the app
+  navLinksArray:any = [];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController,MenuController,NavController } from '@ionic/angular';
+import { ToastController,MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { environment } from '../../environments/environment';
@@ -21,19 +21,10 @@ export class ProfileeditPage implements OnInit {
     private router: Router,
   ) { 
     this.languages = [
-      // {
-      //   "name":"Bahasa Indonesia",
-      //   "value":"Es"
-      // },
       {
         "name":"English",
         "value":"En"
       }
-      // ,
-      // {
-      //   "name":"Others",
-      //   "value":"Ot"
-      // }
     ]
   }
 
@@ -85,7 +76,7 @@ export class ProfileeditPage implements OnInit {
         });
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -129,7 +120,7 @@ export class ProfileeditPage implements OnInit {
         this.router.navigateByUrl('/profileview');
       },
       error => {
-        console.log("Error==>", error);
+        
         this.presentToast('Error!!!');
       }
     )

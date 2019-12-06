@@ -44,14 +44,8 @@ export class QuizdetailsPage implements OnInit {
     private route: ActivatedRoute,
     private iab: InAppBrowser,
     private fileX: FileTransfer,
-   // private file: File,
-   // private webView:WebView
   ) {
-    // var file = new File();
-    // this.path = this.file.dataDirectory + "files/";
-    // this.downloadPath = this.path + "certificate.pdf"
-    // //this.showPath = normalizeURL(this.path + "beer.jpg")
-    // this.showPath = this.webView.convertFileSrc(this.path + "certificate.pdf")
+
    }
 
   ngOnInit() {
@@ -67,22 +61,14 @@ export class QuizdetailsPage implements OnInit {
       "lectureid": id,
       "userid": localStorage.getItem('userId')
     }
-    console.log(data);
     this.mainService.getquizQuestion(data).subscribe(
       res => {
-        console.log("First Question==>", res);
-        // if(res['code']==1) {
         this.showQuestion = true;
         this.quizDetails = res['quizData'];
         this.ansOptions = JSON.parse(res['quizData']['options']);
-        // }
-        // else {
-        //   this.showQuestion =false;
-        // }
-
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -94,12 +80,10 @@ export class QuizdetailsPage implements OnInit {
       "currentquizid": quizDetails.id,
       "userid": localStorage.getItem('userId')
     }
-    console.log(data);
     this.mainService.getquizQuestionNext(data).subscribe(
       res => {
         this.ansStatus = '';
         this.ansindex = '';
-        console.log("Quiz Question and Answer==>", res);
         if (res['code'] == 1) {
           this.showQuestion = true;
           this.quizDetails = res['quizData'];
@@ -112,25 +96,21 @@ export class QuizdetailsPage implements OnInit {
 
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
 
   selectAnswer(ans, questionDetails, i) {
-    console.log("Answer List==>", ans);
-    console.log("Question List==>", questionDetails);
     if (ans.answer == questionDetails.answer) {
       this.ansStatus = 1;
       this.ansindex = i;
-    //  this.nextQuestion(questionDetails);
     this.quizaddScore(ans,questionDetails);
  
     }
     else {
       this.ansStatus = 2;
       this.ansindex = i;
-    //  this.nextQuestion(questionDetails);
     this.quizaddScore(ans,questionDetails);
 
     }
@@ -139,8 +119,6 @@ export class QuizdetailsPage implements OnInit {
 
 
   quizaddScore(ans,questionDetails) {
-    console.log("ssssssss==>",ans);
-    console.log("Add Score click==>",questionDetails);
     if (ans.answer == questionDetails.answer) {
       this.score = questionDetails.marks;
     } 
@@ -157,15 +135,11 @@ export class QuizdetailsPage implements OnInit {
       "qtype":questionDetails.Qtype,
       "apikey": environment.apikey
     }
-     console.log("Correct Ans Data ==>",data);
     this.mainService.quizAddScore(data).subscribe(
       res => {
-        console.log("Add SCore Result==>", res);
         if(res['code']==1) {
            this.showQuestion =true;
            this.nextQuestion(questionDetails);
-          // this.quizDetails = res['quizData'];
-          // this.ansOptions = JSON.parse(res['quizData']['options']);
         }
         else {
           this.showQuestion =false;
@@ -174,22 +148,19 @@ export class QuizdetailsPage implements OnInit {
 
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
 
   getQuizFinalScore(quizDetails) {
-    //alert(1);
     var data = {
       "apikey": environment.apikey,
       "lectureid": this.lecId,
       "userid": localStorage.getItem('userId')
     }
-    console.log(data);
     this.mainService.quizFinalResult(data).subscribe(
       res => {
-        console.log("Final Result Success==>", res);
         if(res['code']==1) {
           if(res['is_quiz_exist'] == 0) {
             this.pageTitle = "Final Test result";
@@ -212,7 +183,7 @@ export class QuizdetailsPage implements OnInit {
         }
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -224,15 +195,13 @@ export class QuizdetailsPage implements OnInit {
       "userid": this.userId,
       "courseid": this.courseId
     }
-    console.log(data);
     this.mainService.getCertificateDetails(data).subscribe(
       res => {
-        console.log("Certificate Details====>",res);
         this.certificateHtml = res['html'];
         this.certificatePdf = res['url'];
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }

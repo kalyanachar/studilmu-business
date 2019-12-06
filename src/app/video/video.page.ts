@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { environment } from '../../environments/environment';
 import { MainService } from '../core/services/main.service';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 @Component({
   selector: 'app-video',
   templateUrl: './video.page.html',
@@ -19,13 +20,13 @@ export class VideoPage implements OnInit {
     public activatedRoute :ActivatedRoute,
     private statusBar: StatusBar,
     public mainService: MainService,
+    public transfer:FileTransfer
   ) {
     this.activatedRoute.queryParams.subscribe((res)=>{
       this.courseDetails = res;
       this.videoSource = res.source;
   });
- 
-   }
+   } 
 
   ngOnInit() {
     this.userId = localStorage.getItem('userId');
@@ -48,9 +49,7 @@ export class VideoPage implements OnInit {
           }
       },
       error => {
-        console.log("Error==>", error);
       }
     )
   }
-
 }

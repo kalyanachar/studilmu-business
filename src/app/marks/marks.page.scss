@@ -1,0 +1,131 @@
+.ans-success {
+    background: #0EDC53 !important;
+    --ion-background-color: #0EDC53 !important;
+}
+
+.ans-error {
+    background: #FF4D00 !important;
+    --ion-background-color: #FF4D00 !important;
+}
+
+// ion-item{
+//     --ion-background-color:#FF4D00;
+//  }
+ion-toolbar.vb {
+    --background: #1f5b87 !important;
+    display: inline-block;
+    width: 100%;
+}
+
+ion-toolbar.vb ion-title {
+    font-weight: normal;
+}
+
+.po {
+    --background: #f1f1f1 !important;
+}
+
+.ion_p {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.ion_p ion-card.quiz-details {
+    /*   background: #ffffff; */
+    border-radius: 6px;
+    position: relative;
+    box-shadow: none;
+    text-align: left;
+    margin-top: 7px;
+}
+
+.ion_p ion-card.quiz-details ion-card-content {
+    -webkit-padding-start: 0;
+    -webkit-padding-end: 0;
+    padding-top: 0;
+}
+
+.ion_p ion-card.quiz-details ion-card-content ion-card-title h2 {
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    color: #666666 !important;
+}
+
+.ion_p ion-card.quiz-details ion-card-content h2 {
+    color: #000000 !important;
+    font-size: 15px !important;
+    margin-bottom: 15px;
+}
+
+.rt {
+    float: left;
+    width: 100%;
+    border-radius: 6px !important;
+    overflow: hidden;
+    --background: none;
+}
+
+.rt .list-course {
+    float: left;
+    width: 100%;
+    border-radius: 6px !important;
+    overflow: hidden;
+    --background: none;
+}
+
+ion-list.mnp {
+    background: #ffffff !important;
+    border-radius: 6px;
+}
+
+.rt .list-course ion-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.rt .list-course ion-radio {
+    border-radius: 100%;
+    border: 2px solid #000000;
+    width: 15px;
+    height: 16px;
+}
+
+.ion_p ion-card.quiz-details ion-button {
+    --ion-color-base: #de5b61 !important;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+ion-card.quiz-details.vop {
+    background: #ffffff;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 9px 0px #000000 !important;
+    text-align: center !important;
+    padding: 15px;
+}
+
+ion-card.quiz-details.vop ion-img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+ion-card.quiz-details .w {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+ion-card.quiz-details .w1,
+ion-card.quiz-details .w2,
+ion-card.quiz-details .w3 {
+    font-size: 13px;
+    color: #525252;
+}
+
+ion-card.quiz-details.vop .bol {
+    --background: #de5b61;
+    margin-top: 15px;
+}

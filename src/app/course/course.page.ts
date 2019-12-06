@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastController, MenuController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { environment } from '../../environments/environment';
 import { MainService } from '../core/services/main.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
@@ -28,10 +28,7 @@ export class CoursePage implements OnInit {
   lessonCount: any;
   totalViewsCount: any;
   assignmentDetails: any = {};
-
-
   itemsNew: any = [];
-  //data: Array<{title: string, details: string, icon: string, showDetails: boolean}> = [];
   data = [];
   constructor(
     private router: Router,
@@ -47,8 +44,6 @@ export class CoursePage implements OnInit {
   ngOnInit() {
     this.imageBaseUrl = environment.imageBaseUrl;
     this.currentSegment = 'overview';
-    //alert(this.route.snapshot.queryParamMap.get('id'));
-    // alert("kk"+this.route.snapshot.paramMap.get('id'));
     this.userId = localStorage.getItem('userId');
     this.courseId = this.route.snapshot.paramMap.get('id');
     this.getCourseDetails();
@@ -91,7 +86,7 @@ export class CoursePage implements OnInit {
         this.courseContentNew = this.courseContent;
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -176,7 +171,7 @@ export class CoursePage implements OnInit {
         }
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -204,7 +199,7 @@ export class CoursePage implements OnInit {
 
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -236,7 +231,7 @@ export class CoursePage implements OnInit {
 
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
 

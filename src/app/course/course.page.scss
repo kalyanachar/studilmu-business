@@ -33,22 +33,13 @@
 
 .assignment ion-card-title {
     font-size: 1rem;
-
-    // ion-button {
-    //     font-size: 13px;
-    // }
 }
-
-// .zt[_ngcontent-mjc-c1] ion-button[_ngcontent-mjc-c1]  {
-//     font-size: 13px;
-// }
 
 .assign-eye {
     padding: 8px;
     font-size: 30px;
 }
 
-/////////////////////////////////////////////////
 .expand-wrapper {
     transition: max-height 0.4s ease-in-out;
     overflow: hidden;
@@ -75,7 +66,6 @@
 .course-details ion-label {
     margin-left: 25px;
     width: 95%;
-    //padding: 10px;
 }
 
 .course-details ion-checkbox {
@@ -88,7 +78,6 @@
     width: 25px;
     border-radius: 50%;
     display: inline-block;
-    // float:right;
     position: absolute;
     right: 10px;
 }
@@ -98,13 +87,9 @@
 }
 
 .dot-blue {
-   // background-color: #08d6e8;
    background: #1ad28a !important;
 }
 
-//   .course-content0 .dot0 {
-//     background-color: #08d6e8;
-//   }
 .video-checkbox {
     color: #000 !important;
 }
@@ -215,7 +200,6 @@ ion-card-header.lo .fj.segment-button-checked {
 
 .yt ion-item {
     font-size: 14px;
-    /* height: 31px; */
     float: left;
     width: 100%;
     position: relative;
@@ -322,7 +306,6 @@ ion-card-header.lo .fj.segment-button-checked {
     height: 19px;
     width: 19px;
     margin-top: 0 !important;
-    // background: #1ad28a !important;
 }
 
 .xt ion-card .course-details .lec-info {

@@ -29,7 +29,7 @@ export class MarksPage implements OnInit {
     private route: ActivatedRoute,
     private iab: InAppBrowser,
   ) { }
-
+  
   ngOnInit() {
     this.userId = localStorage.getItem('userId');
     this.lecId = this.route.snapshot.paramMap.get('id');
@@ -58,15 +58,12 @@ export class MarksPage implements OnInit {
           this.isCertificate = res['certificate'];
           this.companyId = res['companyid'];
           this.quizId = res['quizid'];
-
         }
         else {
-
         }
-
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
@@ -77,7 +74,4 @@ export class MarksPage implements OnInit {
   gotoCourse() {
     this.router.navigate(['/course', this.courseId]);
   }
-
-
-
 }

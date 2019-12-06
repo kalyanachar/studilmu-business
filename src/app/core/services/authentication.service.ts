@@ -20,11 +20,6 @@ export class AuthenticationService {
    }
 
    ifLoggedIn() {
-    // this.storage.get('USER_INFO').then((response) => {
-    //   if (response) {
-    //     this.authState.next(true);
-    //   }
-    // });
     if (localStorage.getItem('isLoggedin')=='true') {
       this.authState.next(true);
     }
@@ -32,11 +27,6 @@ export class AuthenticationService {
   }
 
   login(loginDetails:any) {
-
-    // this.storage.set('USER_INFO', loginDetails).then((response) => {
-    //   this.router.navigateByUrl('/dashboard');
-    //   this.authState.next(true);
-    // });
     if (localStorage.getItem('isLoggedin')=='true') {
       this.router.navigateByUrl('/home');
       this.authState.next(true);
@@ -44,10 +34,6 @@ export class AuthenticationService {
   }
 
   logout() {
-    // this.storage.remove('USER_INFO').then(() => {
-    //   this.router.navigateByUrl('/login');
-    //   this.authState.next(false);
-    // });
     localStorage.clear();
     this.router.navigateByUrl('/login');
     this.authState.next(false);

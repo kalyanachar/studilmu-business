@@ -1,7 +1,6 @@
 <ion-header>
     <ion-toolbar class="vb">
         <ion-buttons slot="start">
-            <!-- <ion-back-button ></ion-back-button> -->
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title>Profile View</ion-title>
@@ -28,18 +27,6 @@
         </div>
     </div>
     <div class="ion-text-center profile-view uo">
-        <!-- <ion-item>
-            <ion-label>
-                <ion-icon name="person"></ion-icon>
-                {{userDetails.first_name}} {{userDetails.last_name}}
-            </ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>
-                <ion-icon name="mail"></ion-icon>
-                {{userDetails.email}}
-            </ion-label>
-        </ion-item> -->
         <ion-item>
             <ion-label>
                 <ion-icon name="information-circle"></ion-icon>
@@ -60,8 +47,4 @@
         </ion-item>
         <ion-button shape="round" padding (click)="gotoPage('profileedit')" class="ion-text-capitalize"><span>Edit Profile</span></ion-button>
     </div>
-
-
-
-
 </ion-content>

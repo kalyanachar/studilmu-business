@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController,MenuController,NavController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { Router,ActivatedRoute } from '@angular/router';
 import { MainService } from '../core/services/main.service';
 import { environment } from '../../environments/environment';
@@ -46,7 +46,7 @@ export class CoursefeedbackPage implements OnInit {
         this.CourseContentCertificate= res.CourseContentInfo[5];
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }

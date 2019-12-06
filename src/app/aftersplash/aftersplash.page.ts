@@ -24,12 +24,6 @@ export class AftersplashPage implements OnInit {
       "keyDetails":1
     }
 
-    this.mainService.getAPiKey(data).subscribe(
-      res => {
-      },
-      error => {
-      }
-    )
   }
 
 }

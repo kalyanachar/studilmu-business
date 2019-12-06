@@ -10,7 +10,6 @@
                     </div>
                 </div>
                 <ion-toolbar class="ct">
-                    <!-- <ion-title>Menu</ion-title> -->
                     <ion-item lines="none" (click)="gotoPage('profileview')">
                         <ion-avatar slot="start">
                             <img src="{{userImage}}">
@@ -20,51 +19,15 @@
                             <p>{{userEmail}}</p>
                         </ion-label>
                     </ion-item>
-                    <!-- <ion-item lines="none">
-          <ion-label>
-          <ion-icon slot="start" class="icon-left" name="eye" (click)="gotoPage('profileview')"></ion-icon>
-          <ion-icon slot="end" class="icon-right" name="create" (click)="gotoPage('profileedit')"></ion-icon>
-        </ion-label>
-          </ion-item> -->
                 </ion-toolbar>
             </ion-header>
             <ion-content class="ct_co">
-                <!-- <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle></ion-menu-toggle>
-        </ion-list> -->
+            
                 <ion-item (click)="gotoPage('home')">
                     <ion-img class="" src="/assets/imgs/home2.png" style="width: 17px;"></ion-img>
                     <ion-label> Home</ion-label>
                 </ion-item>
-                <!-- <ion-item > 
-            <ion-icon slot="start" name="list"></ion-icon>
-            <ion-label> Company Profile</ion-label>
-        </ion-item>
-        <ion-item > 
-            <ion-icon slot="start" name="list"></ion-icon>
-            <ion-label> Employee Profile</ion-label>
-        </ion-item>
-        <ion-item > 
-            <ion-icon slot="start" name="list"></ion-icon>
-            <ion-label> Employee Report</ion-label>
-        </ion-item> -->
-                <!-- <ion-item (click)="gotoCertificate()"> 
-          <ion-icon slot="start" name="list"></ion-icon>
-          <ion-label> Certificate</ion-label>
-      </ion-item> -->
-      <!-- <ion-item (click)="gotoPage('test')"> 
-        <ion-icon slot="start" name="list"></ion-icon>
-        <ion-label> Test</ion-label>
-    </ion-item> -->
-
+             
                 <ion-item (click)="gotoPage('changepassword')">
                     <ion-img class="" src="/assets/imgs/lock.png"></ion-img>
                     <ion-label> Change Password</ion-label>

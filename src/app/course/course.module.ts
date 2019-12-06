@@ -20,7 +20,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  // declarations: [CoursePage,MiAccordionComponent],
   declarations: [CoursePage,ExpandableComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

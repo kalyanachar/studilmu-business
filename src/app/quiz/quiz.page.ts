@@ -38,7 +38,7 @@ export class QuizPage implements OnInit {
       this.quizDetails = res;
       },
       error => {
-        console.log("Error==>", error);
+        
       }
     )
   }
