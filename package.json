@@ -42,7 +42,7 @@
     "cordova-sqlite-storage": "^3.2.1",
     "core-js": "^2.5.4",
     "google-libphonenumber": "^3.2.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "rxjs": "~6.5.1",
     "safe-json-parse": "^4.0.0",
     "tslib": "^1.9.0",
